@@ -30,35 +30,49 @@ class ListViewStep10 extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            const Text('주제명'),
+            const Text('Header'),
+            //----------------------------------------------------------------------------------------------
+            // 1. Expanded
+            //   - Header, Bottom 의 Text Height를 제외후 남은 영역을 모두 찾이 한다.
+            //----------------------------------------------------------------------------------------------
             Expanded(
-              flex: 9,
+              //   flex: 9,
               child: ListView.separated(
                 padding: const EdgeInsets.all(20.0),
-                //
+
+                //----------------------------------------------------------------------------------------------
+                // 2. itemBuilder
+                //   - itemCount 갯수만큼 수행하여 List를 생성한다.
+                //----------------------------------------------------------------------------------------------
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    height: listHeight[index], //List한줄 높이 (사실 Container 높이 이다.)
+                    height: listHeight[index], //List별 한줄 높이
                     //padding: const EdgeInsets.all(10),  //List 한줄에서 그 내부 내용과 한줄라인간의 간격
                     color: Colors.blue[color[index]],
                     child: Center(child: Text('Alaphbet = ${alphabet[index]}')),
                   );
                 },
-                //
-                separatorBuilder: (BuildContext context, int index) => const Divider(
+
+                //----------------------------------------------------------------------------------------------
+                // 3. separatorBuilder
+                //   - List line별 줄 간격 및 구분Line의 두깨 설정
+                //----------------------------------------------------------------------------------------------
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(
                   thickness: 8,
                   height: 50,
                 ),
                 //
-                itemCount: 5, //alphabet.length,
+                itemCount: alphabet.length,
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: ListView(
-                children: const [Center(child: Text("하단"))],
-              ),
-            ),
+            const Text('Bottom'),
+            // Expanded(
+            //   flex: 1,
+            //   child: ListView(
+            //     children: const [Center(child: Text("하단"))],
+            //   ),
+            // ),
           ],
         ),
       ),

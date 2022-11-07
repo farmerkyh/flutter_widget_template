@@ -22,15 +22,15 @@
     이스타그램을 실행했을 때 전세계인의 모든 피드를 불러온다면 모바일폰은 폭발할 것이다. 
     하지만 이 위젯을 쓰면 보는 부분만 파일들을 불러오기 때문에 콜을 효율적으로 할 수 있다.
 
-###4. ListView
+### 4. ListView
  - List형태로 scroll되는 widget이다.
  - builder, separated와 같이 count,length 개념이 없다.
  - ListView(children:[Text('a'), Text('b'), Text('b')]) 와 같이 보여주고 싶은 Widget을 모두 나열한다.
 
-###4. ListView.builder
+### 4. ListView.builder
  <img src="./README_images/listview_seperated_100.png" height="500">
 
-###4. ListView.separated
+### 4. ListView.separated
 ```dart
     //1. ListView
     //   - .separated       . 라인별 구분라인이 그린다.
@@ -45,7 +45,7 @@
 ```
  <img src="./README_images/listview_seperated_100.png" height="500">
 
-###4. ListView.custom
+### 4. ListView.custom
 ```dart
 child: ListView.custom(
     childrenDelegate: SliverChildBuilderDelegate((BuildContext context, int index) {

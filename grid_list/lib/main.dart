@@ -3,6 +3,8 @@
 */
 import 'package:flutter/material.dart';
 import 'package:grid_template/listview/listview_seperated_100.dart';
+import 'package:grid_template/listview/listview_builder_100.dart';
+import 'package:grid_template/listview/listview_custom_100.dart';
 import 'package:grid_template/gridview/gridview_builder_100.dart';
 import 'package:grid_template/gridview/gridview_count_100.dart';
 import 'package:grid_template/gridview/gridview_extent_100.dart';
@@ -70,11 +72,13 @@ class MyGrid extends StatelessWidget {
                       BorderRadius.only(bottomLeft: Radius.circular(40.0), bottomRight: Radius.circular(40.0))),
             ),
             //
-            createLeftOneMenu(context, "ListView.separated", ListViewStep10()),
+            createLeftOneMenu(context, "ListView.builder", ListViewBuilder100()),
+            createLeftOneMenu(context, "             .separated", ListViewSeperated100()),
+            createLeftOneMenu(context, "             .custtom", ListViewCustom100()),
             createLeftOneMenu(context, "GridView.builder", GridViewBuilder100()),
-            createLeftOneMenu(context, "                .count", GridViewCount100()),
-            createLeftOneMenu(context, "                .extent", GridViewExtent100()),
-            createLeftOneMenu(context, "                .custom", GridViewCustom100()),
+            createLeftOneMenu(context, "               .count", GridViewCount100()),
+            createLeftOneMenu(context, "               .extent", GridViewExtent100()),
+            createLeftOneMenu(context, "               .custom", GridViewCustom100()),
           ],
         ),
       ),

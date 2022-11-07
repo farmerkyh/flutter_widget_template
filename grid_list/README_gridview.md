@@ -1,7 +1,6 @@
-# GridView_template
+# GridView Template
 
-## GridView
-### 1. 
+### 1. 정의
 
 ### 2. GridView 5가지 생성 방법
    - GridView
@@ -40,6 +39,8 @@
                 itemBuilder: (BuildContext context, int index) { ... },   //item 의 반목문 항목 형성
             )
 
+<img src="./README_images/gridview_builder_100.png" height="500">
+
 ### 4. GridView.count 속성 및 특징
             GridView.count(
                 crossAxisCount: 1,          //1 개의 행에 보여줄 item 개수
@@ -48,6 +49,8 @@
                 crossAxisSpacing: 10,       //수직 Padding                    
                 children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
             ),
+
+<img src="./README_images/gridview_count_100.png" height="500">
 
 ### 4. GridView.extent 속성 및 특징
  - GridView의 생성자, GridView.count와 거의 동일하다.
@@ -62,7 +65,9 @@
                     children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
             );
 
-### 4. GridView.extent 속성 및 특징
+<img src="./README_images/gridview_extent_100.png">
+
+### 4. GridView.custom 속성 및 특징
 #### SliverGridDelegate
  - SliverGridDelegateWithFixedCrossAxisCount : 교차 축의 자식 수
  - SliverGridDelegateWithMaxCrossAxisExtent  : 자식에 대한 최대 교차 축 공간 (우리가 사용하는 것과 동일 GridView.extent)
@@ -75,3 +80,4 @@
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(),
             ),
 
+<img src="./README_images/gridview_custom_100.png" height="500">

@@ -28,43 +28,45 @@
    - 그져 문법적인 차이로만 느껴짐 (2022.11.07일 기준.  좀더 실력이 늘면 차이점이 느껴 질랑가?? ㅋㅋ)
 
 ### 4. GridView.builder 속성 및 특징
-            GridView.builder(
-                itemCount: 10,                  //item 개수
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,          //1 개의 행에 보여줄 item 개수
-                    childAspectRatio: 1 / 2,    //item 의 가로 1, 세로 2 의 비율
-                    mainAxisSpacing: 30,        //수평 Padding
-                    crossAxisSpacing: 10,       //수직 Padding                    
-                ),
-                itemBuilder: (BuildContext context, int index) { ... },   //item 의 반목문 항목 형성
-            )
-
+```dart
+GridView.builder(
+    itemCount: 10,                  //item 개수
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,          //1 개의 행에 보여줄 item 개수
+        childAspectRatio: 1 / 2,    //item 의 가로 1, 세로 2 의 비율
+        mainAxisSpacing: 30,        //수평 Padding
+        crossAxisSpacing: 10,       //수직 Padding                    
+    ),
+    itemBuilder: (BuildContext context, int index) { ... },   //item 의 반목문 항목 형성
+)
+```
 <img src="./README_images/gridview_builder_100.png" height="500">
 
 ### 4. GridView.count 속성 및 특징
-            GridView.count(
-                crossAxisCount: 1,          //1 개의 행에 보여줄 item 개수
-                childAspectRatio: 1 / 2,    //item 의 가로 1, 세로 2 의 비율
-                mainAxisSpacing: 30,        //수평 Padding
-                crossAxisSpacing: 10,       //수직 Padding                    
-                children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
-            ),
-
+```dart
+GridView.count(
+    crossAxisCount: 1,          //1 개의 행에 보여줄 item 개수
+    childAspectRatio: 1 / 2,    //item 의 가로 1, 세로 2 의 비율
+    mainAxisSpacing: 30,        //수평 Padding
+    crossAxisSpacing: 10,       //수직 Padding                    
+    children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
+),
+```
 <img src="./README_images/gridview_count_100.png" height="500">
 
 ### 4. GridView.extent 속성 및 특징
  - GridView의 생성자, GridView.count와 거의 동일하다.
  - 하지만 가로 혹은 세로를 채울 Widget의 개수를 하나의 Widget의 너비를 통해 동적으로 구한다.
  - maxCrossAxisExtent : item 하나의 height size지정 (최대 사이즈로 레이아웃을 채운다.)
-
-            GridView.extent(
-                    maxCrossAxisExtent: 100.0,    //item 하나의 height size지정
-                    mainAxisSpacing: 30.0,        //수평 Padding
-                    crossAxisSpacing: 10.0,       //수직 Padding       
-                    childAspectRatio: 1.0,
-                    children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
-            );
-
+```dart
+GridView.extent(
+        maxCrossAxisExtent: 100.0,    //item 하나의 height size지정
+        mainAxisSpacing: 30.0,        //수평 Padding
+        crossAxisSpacing: 10.0,       //수직 Padding       
+        childAspectRatio: 1.0,
+        children: List.generate(length, (index) { ... }   //item 의 반목문 항목 형성
+);
+```
 <img src="./README_images/gridview_extent_100.png">
 
 ### 4. GridView.custom 속성 및 특징
@@ -74,10 +76,10 @@
 #### SliverChildDelegate
  - SliverChildBuilderDelegate : 자식을 구성하기 위한 빌더 콜백을 제공한다.
  - SliverChildListDelegate    : 자식 목록을 명시적으로 만드는 옵션을 제공한다.
-
-            child: GridView.custom(
-                childrenDelegate: SliverChildBuilderDelegate( () {} ),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(),
-            ),
-
+```dart
+child: GridView.custom(
+    childrenDelegate: SliverChildBuilderDelegate( () {} ),
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(),
+),
+```
 <img src="./README_images/gridview_custom_100.png" height="500">

@@ -14,7 +14,9 @@
    |------|---|---|
    |count| 콜백방식, 갯수지정  | 콜백방식
    |extend| 콜백방식, 넓이지정  | 콜백방식
-   |build| 클래스방식, 갯수지정, 넓이지정  | 콜백방식
+   |build| 클래스방식 <br>
+ 갯수지정 : SliverGridDelegateWithFixedCrossAxisCount <br>
+ 넓이지정 :  SliverGridDelegateWithMaxCrossAxisExtent    | 콜백방식
    |custom| 클래스방식, 갯수지정, 넓이지정  | 클래스방식
 
 

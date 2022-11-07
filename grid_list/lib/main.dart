@@ -2,7 +2,11 @@
   - Flutter 3.3.5
 */
 import 'package:flutter/material.dart';
-import 'package:grid_template/listview/listview_seperated_100/listview_seperated_100.dart';
+import 'package:grid_template/listview/listview_seperated_100.dart';
+import 'package:grid_template/gridview/gridview_builder_100.dart';
+import 'package:grid_template/gridview/gridview_count_100.dart';
+import 'package:grid_template/gridview/gridview_extent_100.dart';
+import 'package:grid_template/gridview/gridview_custom_100.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,22 +69,12 @@ class MyGrid extends StatelessWidget {
                   borderRadius:
                       BorderRadius.only(bottomLeft: Radius.circular(40.0), bottomRight: Radius.circular(40.0))),
             ),
-            ListTile(
-              title: const Text("ListView.separated"),
-              onTap: () {
-                //Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewStep10()));
-
-                //Route route = MaterialPageRoute(builder: (context) => ListViewStep10());
-                //Navigator.pushReplacement(context, route);
-              },
-            ),
-            ListTile(
-              title: const Text("menu2"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )
+            //
+            createLeftOneMenu(context, "ListView.separated", ListViewStep10()),
+            createLeftOneMenu(context, "GridView.builder", GridViewBuilder100()),
+            createLeftOneMenu(context, "                .count", GridViewCount100()),
+            createLeftOneMenu(context, "                .extent", GridViewExtent100()),
+            createLeftOneMenu(context, "                .custom", GridViewCustom100()),
           ],
         ),
       ),
@@ -89,6 +83,21 @@ class MyGrid extends StatelessWidget {
       //3. body
       //-------------------------------------------------------
       body: const Center(child: Text("Grid Template 모음집 \n메뉴를 클릭 하세요.")),
+    );
+  }
+
+  //-------------------------------------------------------
+  //@class 왼쪽 메뉴 라인 생성
+  //-------------------------------------------------------
+  ListTile createLeftOneMenu(BuildContext context, String menuNm, Widget page) {
+    return ListTile(
+      title: Text(menuNm),
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+        //Navigator.pop(context);
+        //Route route = MaterialPageRoute(builder: (context) => ListViewStep10());
+        //Navigator.pushReplacement(context, route);
+      },
     );
   }
 }

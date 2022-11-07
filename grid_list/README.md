@@ -1,17 +1,12 @@
-# grid_template
-
-# 1. ListView vs ListView.builder
+# ListView 와 GridView
 
 ## 공통점
- - 스크롤이 가능한 배열형 위젯.
+ - 동일한 부모를 상속하고 있다.
+      class GridView extends BoxScrollView {
+         ...
+      }
 
-## 다른점:
- - ListView: 위젯이 생성될 때 리스트뷰안의 차일드 widget을 모두 생성해서 보여준다. 
-             그래서 소수의 차일드를 가질 경우 쓰는것이 적정하다
-             (예, 메뉴리스트)
- - ListView.Builder: 이 위젯은 LazyList(란?)방식이다. 
-    화면에 보여주는 영역만큼만 파일을 저장소나 서버에서 불러와 widget을 생성하여 보여준다.
-    그러므로 다량의 파일을 불러올 때 이것을 쓰면 좋다. 
-    이스타그램을 실행했을 때 전세계인의 모든 피드를 불러온다면 모바일폰은 폭발할 것이다. 
-    하지만 이 위젯을 쓰면 보는 부분만 파일들을 불러오기 때문에 콜을 효율적으로 할 수 있다.
+      class ListView extends BoxScrollView {
+         ...
+      }
 

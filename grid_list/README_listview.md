@@ -46,12 +46,14 @@
  <img src="./README_images/listview_seperated_100.png" height="500">
 
 ###4. ListView.custom
-        child: ListView.custom(
-            childrenDelegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-                return Widget();
-            },
-            childCount: items.length,
-            findChildIndexCallback: (Key key) {..}),
-        ),
+```dart
+    child: ListView.custom(
+        childrenDelegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+            return Widget();
+        },
+        childCount: items.length,
+        findChildIndexCallback: (Key key) {..}),
+    ),
+```
  <img src="./README_images/listview_custom_100.png">
  

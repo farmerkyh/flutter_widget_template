@@ -1,16 +1,23 @@
-# state_less_full
+Widget Tree Element tree  Render tree
 
-A new Flutter project.
+ - Element tree : Widget 위치정보를 가지고 있음
+ - Render tree  : Widget 이 시점에 그린다.
 
-## Getting Started
+Scaffold.of(context) : context에서 Scaffold의 element tree위치를 찾는다.
 
-This project is a starting point for a Flutter application.
+key사용시 메모리를 많이 사용됨
 
-A few resources to get you started if this is your first Flutter project:
+Widget : immutable
+state : mutable
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+didUpdatedWidget : 파라미터가 넘겨때 호출됨
+                   element에 대한 변경사항만 update하고 widget은 다시 그리지 않는다.  
+				   
+				   
+didChangeDependencies : inherited Widget의 상태가 변경된 경우 호출됨
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+initState : 이때는 context가 생성이 안되어 있음 
+didChangeDependencies : 이때는 context가 생성되어 있음
+                        그래서 media Widget을 사용해야 한다면 이곳에서 해야 한다.
+					     arg로 넘길때 모두 rebuild된다.

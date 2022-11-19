@@ -6,6 +6,7 @@ class ColumnScreen100 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Column")),
       //SafeArea - 상단 상태바 하단 작업바(?)영역을 제외하고 영역을 찾이 하도록 설정
       body: SafeArea(
         bottom: false,

@@ -12,6 +12,7 @@ class ColumnScreen110 extends StatelessWidget {
         child: Container(
             color: Colors.black,
             //width: MediaQuery.of(context).size.width,
+            //width: double.infinity,
             child: Column(
               // Column - 주측에서 찾이 할 수 있는 공간은 모두 찾이 한다.
               //        - 반대측은 Widget 크기에 따라서 최소한의 크기만 찾이 한다.

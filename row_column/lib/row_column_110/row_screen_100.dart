@@ -12,7 +12,7 @@ class RowScreen100 extends StatelessWidget {
         child: Container(
             color: Colors.black,
             child: Row(
-              // Row - 주측에서 찾이 할 수 있는 공간은 모두 찾이 한다.
+              // Row - 주측에서 찾이 할 수 있는 공간은 모두 찾이 한다. (default : MainAxisSize.max)
               //     - 반대측은 Widget 크기에 따라서 최소한의 크기만 찾이 한다.
               // mainAxisAlignment : 주측 정렬
               //     - start : 시작
@@ -31,9 +31,9 @@ class RowScreen100 extends StatelessWidget {
               //     - min : 최소
               //     -
               //     -
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
+              //mainAxisAlignment: MainAxisAlignment.center,
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              //mainAxisSize: MainAxisSize.max,
               children: [
                 // Expanded
                 //   - 남아 있는 공간을 모두 찾이 한다.

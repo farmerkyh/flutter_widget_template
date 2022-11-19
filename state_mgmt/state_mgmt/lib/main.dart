@@ -1,14 +1,9 @@
 /*
   - Flutter : ver-3.3.7
+  - 아직 개발하지 않았음 -> 아래 url들을 보고 향후 개발 필요
+    https://software-creator.tistory.com/26
 */
 import 'package:flutter/material.dart';
-import 'package:grid_template/listview/listview_seperated_100.dart';
-import 'package:grid_template/listview/listview_builder_100.dart';
-import 'package:grid_template/listview/listview_custom_100.dart';
-import 'package:grid_template/gridview/gridview_builder_100.dart';
-import 'package:grid_template/gridview/gridview_count_100.dart';
-import 'package:grid_template/gridview/gridview_extent_100.dart';
-import 'package:grid_template/gridview/gridview_custom_100.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Grid Template',
+      title: 'State Management Template',
       theme: ThemeData(primarySwatch: Colors.amber),
       home: MyGrid(),
     );
@@ -36,7 +31,7 @@ class MyGrid extends StatelessWidget {
       //1. appbar
       //-------------------------------------------------------
       appBar: AppBar(
-        title: const Text("Grid/List Template"),
+        title: const Text("State Management Template"),
         centerTitle: true,
         //elevation: 0.0,
 
@@ -72,13 +67,13 @@ class MyGrid extends StatelessWidget {
                       BorderRadius.only(bottomLeft: Radius.circular(40.0), bottomRight: Radius.circular(40.0))),
             ),
             //
-            createLeftOneMenu(context, "ListView.builder", const ListViewBuilder100()),
-            createLeftOneMenu(context, "             .separated", ListViewSeperated100()),
-            createLeftOneMenu(context, "             .custtom", const ListViewCustom100()),
-            createLeftOneMenu(context, "GridView.builder", const GridViewBuilder100()),
-            createLeftOneMenu(context, "               .count", GridViewCount100()),
-            createLeftOneMenu(context, "               .extent", GridViewExtent100()),
-            createLeftOneMenu(context, "               .custom", GridViewCustom100()),
+            // createLeftOneMenu(context, "ListView.builder", const ListViewBuilder100()),
+            // createLeftOneMenu(context, "             .separated", ListViewSeperated100()),
+            // createLeftOneMenu(context, "             .custtom", const ListViewCustom100()),
+            // createLeftOneMenu(context, "GridView.builder", const GridViewBuilder100()),
+            // createLeftOneMenu(context, "               .count", GridViewCount100()),
+            // createLeftOneMenu(context, "               .extent", GridViewExtent100()),
+            // createLeftOneMenu(context, "               .custom", GridViewCustom100()),
           ],
         ),
       ),
@@ -86,7 +81,7 @@ class MyGrid extends StatelessWidget {
       //-------------------------------------------------------
       //3. body
       //-------------------------------------------------------
-      body: const Center(child: Text("Grid Template 모음집 \n메뉴를 클릭 하세요.")),
+      body: const Center(child: Text("상태관리 Template 모음집 \n메뉴를 클릭 하세요.")),
     );
   }
 

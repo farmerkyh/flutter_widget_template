@@ -14,11 +14,8 @@ class GridViewBuilder100 extends StatelessWidget {
       // GridView.builder
       //-------------------------------------------------------------------------
       body: GridView.builder(
-        itemCount: 10, //grid에 표현할 item 개수
+        itemCount: 100, //grid에 표현할 item 개수
 
-        //-------------------------------------------------------------------------
-        // gridDelegate
-        //-------------------------------------------------------------------------
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, //1 개의 행에 보여줄 item 개수
           childAspectRatio: 1 / 2, //item 의 가로 1, 세로 2 의 비율 (default:1/1 = 1:1)
@@ -31,6 +28,7 @@ class GridViewBuilder100 extends StatelessWidget {
         //-------------------------------------------------------------------------
         itemBuilder: (BuildContext context, int index) {
           //item 의 반목문 항목 형성
+          debugPrint("index=$index");
           return Container(
             color: Colors.amber[(index * 100)],
             child: Text("GridView.builder.item=$index, amber[${index * 100}]"),

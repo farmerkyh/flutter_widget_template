@@ -20,6 +20,7 @@ class GridViewCount100 extends StatelessWidget {
           children: List.generate(
             amberList.length,
             (index) {
+              debugPrint('index=$index');
               return Container(
                 color: Colors.amber[amberList[index]],
                 child: Text("Color value=amber[${amberList[index]}]"),

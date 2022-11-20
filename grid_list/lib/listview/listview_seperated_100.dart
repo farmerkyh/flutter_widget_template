@@ -23,14 +23,18 @@ class ListViewSeperated100 extends StatelessWidget {
             //   - Header, Bottom 의 Text Height를 제외후 남은 영역을 모두 찾이 한다.
             //----------------------------------------------------------------------------------------------
             Expanded(
-              //   flex: 9,
+              //-------------------------------------------------------------------------
+              // ListView.separated
+              //   - ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.
+              //   - 한번 반복수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 수행 된다.
+              // separatorBuilder
+              //   - List별 중간에 Line등의 Widget을 주로 넣는다.
+              // 참고
+              //   - Flutter 과거버전 ListView.separated가 없을 때는 ListView.builder를 이용해서 구분라인 추가 했었음
+              //   - itemCount = List 갯수 * 2만 큼 수행시키고, 홀수는 List값, 짝수는 구분라인을 만들었음
+              //-------------------------------------------------------------------------
               child: ListView.separated(
                 padding: const EdgeInsets.all(20.0),
-
-                //----------------------------------------------------------------------------------------------
-                // 2. itemBuilder
-                //   - itemCount 갯수만큼 수행하여 List를 생성한다.
-                //----------------------------------------------------------------------------------------------
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     height: listHeight[index], //List별 한줄 높이
@@ -39,26 +43,15 @@ class ListViewSeperated100 extends StatelessWidget {
                     child: Center(child: Text('Alaphbet = ${alphabet[index]}')),
                   );
                 },
-
-                //----------------------------------------------------------------------------------------------
-                // 3. separatorBuilder
-                //   - List line별 줄 간격 및 구분Line의 두깨 설정
-                //----------------------------------------------------------------------------------------------
-                separatorBuilder: (BuildContext context, int index) => const Divider(
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(
                   thickness: 8,
                   height: 50,
                 ),
-                //
                 itemCount: alphabet.length,
               ),
             ),
             const Text('Bottom'),
-            // Expanded(
-            //   flex: 1,
-            //   child: ListView(
-            //     children: const [Center(child: Text("하단"))],
-            //   ),
-            // ),
           ],
         ),
       ),

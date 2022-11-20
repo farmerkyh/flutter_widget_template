@@ -1,0 +1,8 @@
+Bottom Navigation Bar 
+ - 가로 스크롤로 화면 전환이 되지 않는다.
+ - 이 widget은 Material Design 과 함께 쓰려면 label이 not null이어야 한다.
+ - 아이콘과 라벨 설정이 필수이다
+ - 라벨은 옵션을 통해 안보이게 할 수 있지만 아이콘은 가릴 수 없다. 글씨로만 탭을 구성할 수는 없다.
+ 
+TabBar
+ - 가로 스크롤로 화면 전환이 가능하다.

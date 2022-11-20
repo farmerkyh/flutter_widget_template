@@ -29,7 +29,7 @@ class WebViewScreen100 extends StatelessWidget {
       // WebView
       //    onWebViewCreated : webView가 생성이 되면 WebViewController 를 받을 수 있는 callback이다.
       //    javascriptMode : javascript가 실행될 수 있도록 설정
-      body: const WebView(
+      body: WebView(
         onWebViewCreated: (WebViewController controller) {
           this.controller = controller;
         },

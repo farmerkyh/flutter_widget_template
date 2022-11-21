@@ -37,7 +37,7 @@
  > SingleChildScrollView
 
 ### 5. ListView.builder
- - 참고소스 : listview_builder_100.dart
+ - 참고소스 : https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listview/listview_100.dart
  - 반복적으로 비슷한 형태의 Widget들을 보여줘야 하는 경우에 사용한다.
  - (참고, 단순히 for 문이 수행 + 각 index별로 빈 Row/Column행이 추가 된다.)
  - List별 사이에 공간 및 구분자가 필요 없는 경우에 사용

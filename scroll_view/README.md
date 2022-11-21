@@ -152,39 +152,38 @@
  - count 속성이 없는걸로 봐서 for(반복)형식이 아닌 children 속성에 Widget으로 View를 하는 Widget이다.
  - 정 중앙에 위치된 Row가 선택한 자료가 된다.
  - onEvent 가 존재 하지 않는다.
- - GridView.extend 참고소스
- > 
+
+ - ListWheelScrollView 참고소스
+> https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_100.dart
+
+### 2. onTab 기능 부여 하기
+ - ListWheelScrollView 내부 child Widget을 GestureDetector()로 감싸기
+ > 작동안됨 : GestureDetector()로 감하고 수행하면 오류는 안나지만 onTab event가 작동 안됨
+
+ - ListWheelScrollView외부에서 GestureDetector()로 감싸기 (즉, GestureDetector() 내부 child로 ListWheelScrollView 를 정의한다.)
+ > 완벽하지는 않지만 onTab 기능은 작동함
+ > 이때 onTab은 각 Item에 디한 onTab이 아니고, ListWheelScrollView Widget에 대한 onTab 이다.
+
+ - ListWheelScrollView - onTab 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_105.dart
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_106.dart
  
-### 2. ClickableListWheelScrollView 특징
+### 3. button 이용하기
+ - 버튼을 클릭 해서 현재 선택되어 있는 item을 원하는 곳을 넘겨준다.
+
+ - ListWheelScrollView - button 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_110.dart
+
+### 4. ClickableListWheelScrollView 특징
  - 이 Widget은 ScrollView를 하는 Widget이 아니다.
+ - ListWheelScrollView Widget에서 각 item에 click 가능하도록 도와주는 Widget이다.
  - click event가 존재 않지 않는 ListWheelScrollView Widget을 child로 두고 onItemTapCallback 에서 click event를 받을 수 있도록 도와 주는 Widget이다.
+
  - GridView.extend 참고소스
- > 
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/clickable_list_wheel_scroll_view_100.dart
 
 
 # 6. SingleChildScrollView
-
-
-
-
-## ListView와 GridView 공통점
-- 동일한 부모를 상속하고 있다.
-        
-         class GridView extends BoxScrollView {
-            ...
-         }
-
-         class ListView extends BoxScrollView {
-            ...
-         } 
-
-
-## ListView와 GridView 차이점
-   - ListView는 화면기준 한라인에 자료한건이 표시된다.
-   - GridView는 화면기준 하란인에 자료를 여러건 표시 할 수 있다.
-   - Widget 형태도 기본적으로 Widget 리스트를 스크롤할 수 있게 만드는 형식이고, 
-     둘의 차이는 자식 Widget을 어떻게 나타내는지 차이가 있는 것이다.
-모두 같은 소스에서 상속 받았음(scroll_view.dart) [GridView도 동일]
 
 
 

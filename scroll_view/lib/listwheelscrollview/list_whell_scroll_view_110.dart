@@ -18,7 +18,7 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('KindaCode.com')),
+      appBar: AppBar(title: const Text('ListWheelScrollView')),
       body: Column(children: [
         // display selected item
         Container(
@@ -42,7 +42,6 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
               child: const Text('선택-후 화면닫기용 버튼')),
         ),
         // implement the List Wheel Scroll View
-        // Expanded를 써야 하는 이유 ?
         Expanded(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),

@@ -43,8 +43,7 @@ class ListViewSeperated100 extends StatelessWidget {
                     child: Center(child: Text('Alaphbet = ${alphabet[index]}')),
                   );
                 },
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(
+                separatorBuilder: (BuildContext context, int index) => const Divider(
                   thickness: 8,
                   height: 50,
                 ),

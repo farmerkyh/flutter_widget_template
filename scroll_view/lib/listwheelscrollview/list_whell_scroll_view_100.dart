@@ -8,22 +8,8 @@ class ListWheelScrollView100 extends StatefulWidget {
 }
 
 class _ListViewCustom100State extends State<ListWheelScrollView100> {
-  FixedExtentScrollController fixedExtentScrollController =
-      new FixedExtentScrollController();
-  List monthsOfTheYear = [
-    '1s월',
-    '2월',
-    '3월',
-    '4월',
-    '5월',
-    '6월',
-    '7월',
-    '8월',
-    '9월',
-    '10월',
-    '11월',
-    '12월'
-  ];
+  FixedExtentScrollController fixedExtentScrollController = new FixedExtentScrollController();
+  List monthsOfTheYear = ['1s월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

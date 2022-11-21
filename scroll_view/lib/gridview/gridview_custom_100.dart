@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GridViewCustom100 extends StatelessWidget {
-  List<int> amberList = <int>[0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
-  GridViewCustom100({super.key});
+  const GridViewCustom100({super.key});
 
   @override
   Widget build(BuildContext context) {

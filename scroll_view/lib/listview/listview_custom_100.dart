@@ -23,14 +23,6 @@ class _ListViewCustom100State extends State<ListViewCustom100> {
       body: SafeArea(
         //-------------------------------------------------------------------------
         // ListView.custom
-        //   - custom () 생성자를 사용하면 목록의 자식이 빌드되는 방식에 대한 사용자 지정 기능을 사용하여
-        //     ListView를 빌드 할 수 있다.
-        //     이를 위해 필요한 주요 매개 변수는 항목을 빌드하는 SliverChildDelegate이다.
-        // SliverChildDelegates의 유형
-        //   - SliverChildListDelegate, SliverChildBuilderDelegate 2가지가 있다.
-        //   - 자신의 델리게이트를 구축하기 위해이를 사용하거나 하위 클래스화할 수 있다.
-        //     ListView.builder는 기본적으로 SliverChildBuilderDelegate가있는 ListView.custom이다.
-        //     ListView 기본 생성자는 SliverChildListDelegate가있는 ListView.custom처럼 동작한다.
         //-------------------------------------------------------------------------
         child: ListView.custom(
           //-------------------------------------------------------------------------
@@ -98,8 +90,7 @@ class KeepAlive extends StatefulWidget {
   State<KeepAlive> createState() => _KeepAliveState();
 }
 
-class _KeepAliveState extends State<KeepAlive>
-    with AutomaticKeepAliveClientMixin {
+class _KeepAliveState extends State<KeepAlive> with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
 

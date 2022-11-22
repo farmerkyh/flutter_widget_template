@@ -183,7 +183,8 @@
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/clickable_list_wheel_scroll_view_100.dart
 
 
-# 6. SingleChildScrollView
-
-
+# 6. SingleChildScrollView 특징
+ - ListView() Widget과 기능이 거의 유사하다.
+ - SingleChildScrollView 안에 있는 위젯들은 모두 랜더링된다.
+ - 즉, Widget이 100개 만들겠다고 하면 build시점에 바로 100개 만들어 진다.
 

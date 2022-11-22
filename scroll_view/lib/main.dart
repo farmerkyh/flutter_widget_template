@@ -18,6 +18,7 @@ import 'package:grid_template/listwheelscrollview/list_whell_scroll_view_105.dar
 import 'package:grid_template/listwheelscrollview/list_whell_scroll_view_106.dart';
 import 'package:grid_template/listwheelscrollview/list_whell_scroll_view_110.dart';
 import 'package:grid_template/singlechildscrollview/single_child_scroll_view_100.dart';
+import 'package:grid_template/singlechildscrollview/single_child_scroll_view_110.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,7 +66,7 @@ class MyGrid extends StatelessWidget {
       //-------------------------------------------------------
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.only(bottom: 20),
+          //padding: EdgeInsets.only(bottom: 20),
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             const UserAccountsDrawerHeader(
@@ -92,18 +93,19 @@ class MyGrid extends StatelessWidget {
             createLeftOneMenu(context, "GridView.builder", const GridViewBuilder100()),
             createLeftOneMenu(context, "               .count", GridViewCount100()),
             createLeftOneMenu(context, "               .extent", GridViewExtent100()),
-            createLeftOneMenu(context, "               .custom", GridViewCustom100()),
+            createLeftOneMenu(context, "               .custom", const GridViewCustom100()),
             createLeftOneMenu(context, "               .extent", GridViewExtent100()),
 
             const Divider(height: 5),
             createLeftOneMenu(context, "ListWheelScrollView(100)", const ListWheelScrollView100()),
-            createLeftOneMenu(context, "ListWheelScrollView-onTap(105)", const ListWheelScrollView105()),
-            createLeftOneMenu(context, "ListWheelScrollView-onTap(106)", const ListWheelScrollView106()),
-            createLeftOneMenu(context, "ListWheelScrollView-button(110)", const ListWheelScrollView110()),
+            createLeftOneMenu(context, "                                -onTap(105)", const ListWheelScrollView105()),
+            createLeftOneMenu(context, "                                -onTap(106)", const ListWheelScrollView106()),
+            createLeftOneMenu(context, "                                -button(110)", const ListWheelScrollView110()),
             createLeftOneMenu(context, "ClickableListWheelScrollView", const ClickableListWheelScrollView100()),
 
             const Divider(height: 5),
-            createLeftOneMenu(context, "SingleChildScrollView", const SingleChildScrollView100()),
+            createLeftOneMenu(context, "SingleChildScrollView(100)", const SingleChildScrollView100()),
+            createLeftOneMenu(context, "SingleChildScrollView(110)", const SingleChildScrollView110()),
           ],
         ),
       ),
@@ -118,17 +120,19 @@ class MyGrid extends StatelessWidget {
   //-------------------------------------------------------
   //@class 왼쪽 메뉴 라인 생성
   //-------------------------------------------------------
-  SizedBox createLeftOneMenu(BuildContext context, String menuNm, Widget page) {
-    return SizedBox(
-      height: 30,
-      child: ListTile(
-        title: Text(menuNm),
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => page));
-          //Navigator.pop(context);
-          //Route route = MaterialPageRoute(builder: (context) => ListViewStep10());
-          //Navigator.pushReplacement(context, route);
-        },
+  Widget createLeftOneMenu(BuildContext context, String menuNm, Widget page) {
+    return Center(
+      child: SizedBox(
+        height: 30,
+        child: ListTile(
+          title: Text(menuNm),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+            //Navigator.pop(context);
+            //Route route = MaterialPageRoute(builder: (context) => ListViewStep10());
+            //Navigator.pushReplacement(context, route);
+          },
+        ),
       ),
     );
   }

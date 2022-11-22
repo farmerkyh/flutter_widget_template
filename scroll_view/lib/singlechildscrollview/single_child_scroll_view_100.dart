@@ -11,7 +11,7 @@ class SingleChildScrollView100 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SingleChildScrollView'),
+        title: Text('SingleChildScrollView(100)'),
         centerTitle: true,
       ),
       //Center, Container, SizedBox 는 정상

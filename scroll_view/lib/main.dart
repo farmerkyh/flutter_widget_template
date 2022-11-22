@@ -83,8 +83,8 @@ class MyGrid extends StatelessWidget {
             ),
             //ListView
             createLeftOneMenu(context, "ListView", const ListView100()),
-            createLeftOneMenu(context, "ListView.builder", const ListViewBuilder100()),
-            createLeftOneMenu(context, "             .builder", ListViewBuilder110()),
+            createLeftOneMenu(context, "ListView.builder(기본)", const ListViewBuilder100()),
+            createLeftOneMenu(context, "             .builder(구분라인)", ListViewBuilder110()),
             createLeftOneMenu(context, "             .separated", ListViewSeperated100()),
             createLeftOneMenu(context, "             .custtom", const ListViewCustom100()),
             const Divider(height: 5),
@@ -94,7 +94,6 @@ class MyGrid extends StatelessWidget {
             createLeftOneMenu(context, "               .count", GridViewCount100()),
             createLeftOneMenu(context, "               .extent", GridViewExtent100()),
             createLeftOneMenu(context, "               .custom", const GridViewCustom100()),
-            createLeftOneMenu(context, "               .extent", GridViewExtent100()),
 
             const Divider(height: 5),
             createLeftOneMenu(context, "ListWheelScrollView(100)", const ListWheelScrollView100()),

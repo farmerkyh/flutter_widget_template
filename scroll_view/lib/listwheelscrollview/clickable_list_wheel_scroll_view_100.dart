@@ -11,8 +11,7 @@ class ClickableListWheelScrollView100 extends StatefulWidget {
 class _ClickableListWheelScrollView100State extends State<ClickableListWheelScrollView100> {
   final _scrollController = FixedExtentScrollController();
   final double _itemHeight = 100.0;
-  final data = List.generate(20, (index) => 'Item $index');
-  List monthsOfTheYear = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+  final data = List.generate(20, (index) => 'Item - $index');
   @override
   Widget build(BuildContext context) {
     return Scaffold(

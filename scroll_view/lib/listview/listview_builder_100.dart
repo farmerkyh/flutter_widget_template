@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+/*
+  Desc : ListView.builder() Method이용하여 scroll이 되도록 처리
+*/
 class ListViewBuilder100 extends StatelessWidget {
   const ListViewBuilder100({super.key});
 

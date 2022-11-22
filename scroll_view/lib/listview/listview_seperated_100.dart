@@ -7,6 +7,9 @@ class ListViewSeperated100 extends StatelessWidget {
 
   ListViewSeperated100({super.key});
 
+/*
+  Desc : ListView.separated() Method이용하여 scroll + iten별 구분라인 추가
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +28,6 @@ class ListViewSeperated100 extends StatelessWidget {
             Expanded(
               //-------------------------------------------------------------------------
               // ListView.separated
-              //   - ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.
-              //   - 한번 반복수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 수행 된다.
-              // separatorBuilder
-              //   - List별 중간에 Line등의 Widget을 주로 넣는다.
-              // 참고
-              //   - Flutter 과거버전 ListView.separated가 없을 때는 ListView.builder를 이용해서 구분라인 추가 했었음
-              //   - itemCount = List 갯수 * 2만 큼 수행시키고, 홀수는 List값, 짝수는 구분라인을 만들었음
               //-------------------------------------------------------------------------
               child: ListView.separated(
                 padding: const EdgeInsets.all(20.0),

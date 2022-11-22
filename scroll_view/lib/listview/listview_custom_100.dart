@@ -7,6 +7,10 @@ class ListViewCustom100 extends StatefulWidget {
   State<ListViewCustom100> createState() => _ListViewCustom100State();
 }
 
+/*
+  Desc : ListView.custom() Method이용하여 scroll 이용해서 개발
+         - 하단에 역순버튼을 추가해서 list를 역순으로 출력 되도록 한다.
+*/
 class _ListViewCustom100State extends State<ListViewCustom100> {
   List<String> items = <String>['1', '2', '3', '4', '5'];
 

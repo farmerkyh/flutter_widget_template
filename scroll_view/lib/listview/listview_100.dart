@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : ListView() Widget으로 scroll이 되도록 처리
+*/
 class ListView100 extends StatelessWidget {
   const ListView100({super.key});
 
@@ -14,9 +17,9 @@ class ListView100 extends StatelessWidget {
         scrollDirection: Axis.vertical,
         padding: const EdgeInsets.all(8),
         children: <Widget>[
-          Container(height: 500, color: Colors.grey),
-          Container(height: 500, color: Colors.yellow),
-          Container(height: 500, color: Colors.blue),
+          Container(height: 500, color: Colors.grey, child: const Text('일차/삼차')),
+          Container(height: 500, color: Colors.yellow, child: const Text('이차/삼차')),
+          Container(height: 500, color: Colors.blue, child: const Text('삼차/삼차')),
         ],
       ),
     );

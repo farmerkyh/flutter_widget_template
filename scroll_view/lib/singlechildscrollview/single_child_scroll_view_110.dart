@@ -4,6 +4,11 @@ singleChildScrollView 안에 있는 위젯들은 모두 랜더링이 완료가 �
 */
 import 'package:flutter/material.dart';
 
+/*
+  Desc : SingleChildScrollView() Widget을 이용해서 child에 존재하는 Widget들을 scroll 기능 구현하기 + 화면에 2개 구현
+           - 위쪽 Widget은 상/하 scroll
+           - 아래쪽 Widget은 좌/우 scroll
+*/
 class SingleChildScrollView110 extends StatelessWidget {
   const SingleChildScrollView110({super.key});
 
@@ -14,13 +19,21 @@ class SingleChildScrollView110 extends StatelessWidget {
         title: Text('SingleChildScrollView(110)'),
         centerTitle: true,
       ),
-      //Center, Container, SizedBox 는 정상
-      //Column, Expanded, Row 는 오류
+      //Center, Container, Expanded, SizedBox 는 정상 (항상은 아닌듯?? ㅋㅋ)
+      //Column, Expanded, Row 는 오류 (항상은 아닌듯?? ㅋㅋ)
       body: Column(
         children: [
           Expanded(
+            //-------------------------------------------------------------------------
+            // 1. SingleChildScrollView (상/하 scroll)
+            //-------------------------------------------------------------------------
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
+
+              //-------------------------------------------------------------------------
+              // 2. child
+              //    - child하위의 Widget들로 scroll item을 구성 한다.
+              //-------------------------------------------------------------------------
               child: Column(
                 children: [
                   Container(height: 150, color: Colors.amberAccent),
@@ -36,9 +49,12 @@ class SingleChildScrollView110 extends StatelessWidget {
           Expanded(
             child: Container(
               color: Colors.grey,
+              //-------------------------------------------------------------------------
+              // 3. SingleChildScrollView (좌/우 scroll)
+              //-------------------------------------------------------------------------
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Text('옆으로 가자 ' * 100),
+                child: Text('옆으로 가자  --> ' * 10),
               ),
             ),
           ),

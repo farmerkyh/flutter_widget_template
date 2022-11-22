@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : GridView() Widget을 이용해서 격자형태의 화면 구성하기
+*/
 class GridView100 extends StatelessWidget {
   const GridView100({super.key});
 
@@ -11,13 +14,12 @@ class GridView100 extends StatelessWidget {
         centerTitle: true,
       ),
       //-------------------------------------------------------------------------
-      // GridView
-
+      // 1. GridView
       //-------------------------------------------------------------------------
       body: GridView(
-        scrollDirection: Axis.vertical,
+        scrollDirection: Axis.vertical, //scroll 방향
         //-------------------------------------------------------------------------
-        // gridDelegate
+        // 2. gridDelegate
         //-------------------------------------------------------------------------
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, //1 개의 행에 보여줄 item 개수
@@ -25,6 +27,9 @@ class GridView100 extends StatelessWidget {
           mainAxisSpacing: 10, //수평 Padding
           crossAxisSpacing: 30, //수직 Padding
         ),
+        //-------------------------------------------------------------------------
+        // 3. children에 존재하는 Widget들이 scroll된다.
+        //-------------------------------------------------------------------------
         children: [
           Container(width: 10, color: Colors.yellow, child: Text('Text' * 100)),
           Container(height: 10, color: Colors.blue, child: const Text('Text')),

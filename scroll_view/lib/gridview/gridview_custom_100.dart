@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : GridView.custom() Method를 이용해서 격자형태의 화면 구성하기
+*/
 class GridViewCustom100 extends StatelessWidget {
   const GridViewCustom100({super.key});
 

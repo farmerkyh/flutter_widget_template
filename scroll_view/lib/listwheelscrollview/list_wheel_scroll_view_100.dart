@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : ListWheelScrollView() Widget을 이용해서 바퀴형태의 ListScroll 구현하기
+*/
 class ListWheelScrollView100 extends StatefulWidget {
   const ListWheelScrollView100({super.key});
 
@@ -13,16 +16,13 @@ class _ListWheelScrollView100State extends State<ListWheelScrollView100> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //-------------------------------------------------------
-      //1. appbar
-      //-------------------------------------------------------
       appBar: AppBar(
         title: const Text("ListWheelScrollView"),
         centerTitle: true,
       ),
       body: SafeArea(
         //-------------------------------------------------------------------------
-        // ListWheelScrollView
+        // 1. ListWheelScrollView
         //  itemExtent - 하나의  List에 대한 height
         //  diameterRatio - 지름비율
         //                - 원통 지름과 주 축의 뷰포트 크기(화면에 보여주는 크기) 사이의 비율입니다.
@@ -32,14 +32,25 @@ class _ListWheelScrollView100State extends State<ListWheelScrollView100> {
         //-------------------------------------------------------------------------
         child: ListWheelScrollView(
           controller: fixedExtentScrollController,
+
+          //-------------------------------------------------------------------------
+          // 2. onSelectedItemChanged
+          //     - 사용자가 scroll도중 Widget중간에 위치하면 선택했다고 판단한다.
+          //     - onTab에 대한 event는 아니다.
+          //-------------------------------------------------------------------------
           onSelectedItemChanged: (value) {
             debugPrint("value=$value");
           },
+
           //physics: const FixedExtentScrollPhysics(),
           itemExtent: 60.0,
           diameterRatio: 2,
           offAxisFraction: -1.5,
 
+          //-------------------------------------------------------------------------
+          // 3. children
+          //     - children하위의 Widget들로 List Wheel item을 구성 한다.
+          //-------------------------------------------------------------------------
           children: monthsOfTheYear.map((month) {
             return Card(
               child: Row(

@@ -1,9 +1,8 @@
-/*
-singleChildScrollView 안에 있는 위젯들은 모두 랜더링이 완료가 된 상태다.
-즉, 데이터가 100개를 소유하고 있다면 100개가 다 완료되고 나서 앱은 화면을 보여준다.
-*/
 import 'package:flutter/material.dart';
 
+/*
+  Desc : SingleChildScrollView() Widget을 이용해서 child에 존재하는 Widget들을 scroll 기능 구현하기
+*/
 class SingleChildScrollView100 extends StatelessWidget {
   const SingleChildScrollView100({super.key});
 
@@ -14,11 +13,19 @@ class SingleChildScrollView100 extends StatelessWidget {
         title: Text('SingleChildScrollView(100)'),
         centerTitle: true,
       ),
-      //Center, Container, SizedBox 는 정상
-      //Column, Expanded, Row 는 오류
+      //Center, Container, SizedBox 는 정상 (항상은 아닌듯?? ㅋㅋ)
+      //Column, Expanded, Row 는 오류 (항상은 아닌듯?? ㅋㅋ)
       body: Container(
+        //-------------------------------------------------------------------------
+        // 1. SingleChildScrollView
+        //-------------------------------------------------------------------------
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
+
+          //-------------------------------------------------------------------------
+          // 2. child
+          //    - child하위의 Widget들로 scroll item을 구성 한다.
+          //-------------------------------------------------------------------------
           child: Column(
             children: [
               Container(height: 150, color: Colors.amberAccent),

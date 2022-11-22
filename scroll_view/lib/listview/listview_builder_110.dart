@@ -15,13 +15,16 @@ class ListViewBuilder110 extends StatelessWidget {
         title: const Text('ListView.builder'),
         centerTitle: true,
       ),
+
       //-------------------------------------------------------------------------
-      // ListView.builder
+      // 1. ListView.builder
       //-------------------------------------------------------------------------
       body: ListView.builder(
         itemCount: months.length * 2, //grid에 표현할 item 개수
+
         //-------------------------------------------------------------------------
-        // itemBuilder
+        // 2. itemBuilder속성에 의해 for형식의 반복문이 itemCount 수 만큼 호출 된다.
+        //      - 개발테크닉으로 item별 중간에 Divider()라인을 추가한다.
         //-------------------------------------------------------------------------
         itemBuilder: (BuildContext context, int index) {
           debugPrint('index=$index');

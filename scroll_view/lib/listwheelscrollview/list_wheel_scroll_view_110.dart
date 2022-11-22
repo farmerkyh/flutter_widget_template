@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : 하나의 화면에 Text, Button, ListWheelScrollView() Widget 3가지 구현해보기
+             - Scroll발생 시 선택된 item을 Text에 보여주기
+             - 버튼을 클릭 하면 현재 선택된 item에 대해서 controller를 이용해서 값을 처리 하기
+*/
 class ListWheelScrollView110 extends StatefulWidget {
   const ListWheelScrollView110({super.key});
 
@@ -20,7 +25,9 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
     return Scaffold(
       appBar: AppBar(title: const Text('ListWheelScrollView')),
       body: Column(children: [
-        // display selected item
+        //-------------------------------------------------------------------------
+        // 1. 화면 최상단에 scrollView에서 선택된 item 보여주기
+        //-------------------------------------------------------------------------
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 50),
@@ -31,6 +38,10 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
             style: const TextStyle(fontSize: 32, color: Colors.white),
           ),
         ),
+
+        //-------------------------------------------------------------------------
+        // 2. scrollView에서 선택된 item값을 controller를 통해 제어할 수 있다.
+        //-------------------------------------------------------------------------
         Container(
           width: 250,
           height: 80,
@@ -41,7 +52,10 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
               },
               child: const Text('선택-후 화면닫기용 버튼')),
         ),
-        // implement the List Wheel Scroll View
+
+        //-------------------------------------------------------------------------
+        // 2. ListWheelScrollView
+        //-------------------------------------------------------------------------
         Expanded(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -51,16 +65,25 @@ class _ListWheelScrollView110State extends State<ListWheelScrollView110> {
               controller: fixedExtentScrollController,
               itemExtent: 100,
               diameterRatio: 1.8,
+
+              //-------------------------------------------------------------------------
+              // 3. onSelectedItemChanged
+              //     - 사용자가 scroll도중 Widget중간에 위치하면 선택했다고 판단한다.
+              //     - onTab에 대한 event는 아니다.
+              //-------------------------------------------------------------------------
               onSelectedItemChanged: (int index) {
                 // update the UI on selected item changes
                 setState(() {
                   _selectedItemIndex = index;
                 });
               },
-              // children of the list
+
+              //-------------------------------------------------------------------------
+              // 4. children
+              //     - children하위의 Widget들로 List Wheel item을 구성 한다.
+              //-------------------------------------------------------------------------
               children: _items
                   .map((e) => Card(
-                        // make selected item background color is differ from the rest
                         color: _items.indexOf(e) == _selectedItemIndex ? Colors.orange : Colors.indigo,
                         child: Center(
                           child: Text(e, style: const TextStyle(fontSize: 20, color: Colors.white)),

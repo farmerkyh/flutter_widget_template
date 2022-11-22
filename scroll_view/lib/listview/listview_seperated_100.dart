@@ -22,15 +22,19 @@ class ListViewSeperated100 extends StatelessWidget {
           children: [
             const Text('Header'),
             //----------------------------------------------------------------------------------------------
-            // 1. Expanded
+            // Expanded
             //   - Header, Bottom 의 Text Height를 제외후 남은 영역을 모두 찾이 한다.
             //----------------------------------------------------------------------------------------------
             Expanded(
               //-------------------------------------------------------------------------
-              // ListView.separated
+              // 1. ListView.separated
               //-------------------------------------------------------------------------
               child: ListView.separated(
                 padding: const EdgeInsets.all(20.0),
+
+                //-------------------------------------------------------------------------
+                // 2. itemBuilder속성에 의해 for형식의 반복문이 itemCount 수 만큼 호출 된다.
+                //-------------------------------------------------------------------------
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     height: listHeight[index], //List별 한줄 높이
@@ -39,6 +43,11 @@ class ListViewSeperated100 extends StatelessWidget {
                     child: Center(child: Text('Alaphbet = ${alphabet[index]}')),
                   );
                 },
+
+                //-------------------------------------------------------------------------
+                // 3. separatorBuilder속성에 의해 item간에 Divider등 구분자를 구성할 수 있다.
+                //      - itemBuilder가 한번 수행할 때 separatorBuilder callback도 한번 수행 된다.
+                //-------------------------------------------------------------------------
                 separatorBuilder: (BuildContext context, int index) => const Divider(
                   thickness: 8,
                   height: 50,

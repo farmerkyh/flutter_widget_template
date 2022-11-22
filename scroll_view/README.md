@@ -1,3 +1,6 @@
+> 이 문서는 다른 블로그에서 다루는 내용은 기술하지 않았다.
+> 문서를 만든 목적은 Scroll View의 종류와 개발도중 어떤 Widget을 선택할지에 대한 고민을 줄이고자 하기 위함이다.
+
 # 1. Scroll View 종류
   - ListView
   - ListWheelScrollView
@@ -30,6 +33,8 @@
 
 ### 4. ListView Widget
  - 특징
+ > itemBuilder가 존재하지 않으며, count가 존재 하지 않는다.
+ > children하위의 Widget들로 Grid가 구성 된다.
  > 한번만 수행한다.
  > count관련 속성이 없다.
 
@@ -61,7 +66,7 @@
 
 ### 6. ListView.seperated method
  - ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.
- - 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 수행 된다.
+ - 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 각각 수행 된다.
  > * separatorBuilder
  >   - List별 중간에 Line등의 Widget을 주로 넣을 때 사용 된다.
 
@@ -137,6 +142,7 @@
 
 ### 6. GridView.count method
  - GridView() Widget 과 GridView.count metho의 차이점을 모르겠음. 거의 동일
+ - children하위의 Widget들로 Grid가 구성 된다.
 
  - GridView.count 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/gridview/gridview_count_100.dart
@@ -154,9 +160,11 @@
 ### 8. GridView.extend method
  - GridView()의 생성자, GridView.count()와 거의 동일하다.
  - 가로 혹은 세로를 채울 Widget의 개수를 하나의 Widget의 너비를 통해 동적으로 구한다.
+ - children하위의 Widget들로 Grid가 구성 된다.
  - maxCrossAxisExtent (필수)
  > 한개의 그리드 아이템의 최대넓이(최소?) 값으로 로우 혹은 컬럼의 갯수 자동계산 되어 적용 된다.
  > crossAxisCount 와 같은 속성이 없다.
+
 
  - GridView.extend 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/gridview/gridview_extent_100.dart
@@ -184,17 +192,17 @@
 ### 2. onTab 기능 부여 하기
  - ListWheelScrollView 내부 child Widget을 GestureDetector()로 감싸기
  > 작동안됨 : GestureDetector()로 감하고 수행하면 오류는 안나지만 onTab event가 작동 안됨
+ - ListWheelScrollView - onTab 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_105.dart
 
  - ListWheelScrollView외부에서 GestureDetector()로 감싸기 (즉, GestureDetector() 내부 child로 ListWheelScrollView 를 정의한다.)
  > 완벽하지는 않지만 onTab 기능은 작동함
  > 이때 onTab은 각 Item에 디한 onTab이 아니고, ListWheelScrollView Widget에 대한 onTab 이다.
 
  - ListWheelScrollView - onTab 참고소스
- > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_105.dart
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_106.dart
 
 <img src="./README_images/list_whell_scroll_view_105_1.png" height="500">
-
 
 ### 3. button 이용하기
  - 버튼을 클릭 해서 현재 선택되어 있는 item을 원하는 곳을 넘겨준다.

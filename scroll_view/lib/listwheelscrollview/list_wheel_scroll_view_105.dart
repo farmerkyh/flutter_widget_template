@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : ListWheelScrollView() Widget을 이용해서 바퀴형태의 ListScroll 구현하기 + onTab
+          - ListWheelScrollView child의 Widget에 onTab Event추가하기
+          - 하지만 실패. googling 해보면 아직 안되는 듯.
+*/
 class ListWheelScrollView105 extends StatefulWidget {
   const ListWheelScrollView105({super.key});
 
@@ -19,16 +24,30 @@ class _ListWheelScrollView105State extends State<ListWheelScrollView105> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('ListWheelScrollView-onTab')),
+      //-------------------------------------------------------------------------
+      // 1. ListWheelScrollView
+      //-------------------------------------------------------------------------
       body: ListWheelScrollView(
         controller: fixedExtentScrollController,
         physics: const FixedExtentScrollPhysics(),
         itemExtent: 110,
+
+        //-------------------------------------------------------------------------
+        // 2. children
+        //     - children하위의 Widget들로 List Wheel item을 구성 한다.
+        //-------------------------------------------------------------------------
         children: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
             .map(
               (letter) => Container(
                 margin: const EdgeInsets.all(10),
                 height: 90,
                 color: Colors.yellow,
+
+                //-------------------------------------------------------------------------
+                // 2. GestureDetector event추가하기
+                //     - ListWheelScrollViewchildren child로 GestureDetector event형 Widget을
+                //       추가 했지만 정상작동 되지 않음. (오류발생은 안함)
+                //-------------------------------------------------------------------------
                 child: GestureDetector(
                   onTap: () => print('Letter "$letter" is pressed.'),
                   child: Center(

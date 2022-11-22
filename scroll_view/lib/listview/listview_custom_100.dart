@@ -17,16 +17,13 @@ class _ListViewCustom100State extends State<ListViewCustom100> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //-------------------------------------------------------
-      //1. appbar
-      //-------------------------------------------------------
       appBar: AppBar(
         title: const Text("ListView.custom"),
         centerTitle: true,
       ),
       body: SafeArea(
         //-------------------------------------------------------------------------
-        // ListView.custom
+        // 1. ListView.custom
         //-------------------------------------------------------------------------
         child: ListView.custom(
           //-------------------------------------------------------------------------

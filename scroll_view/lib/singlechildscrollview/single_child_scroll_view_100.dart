@@ -13,8 +13,6 @@ class SingleChildScrollView100 extends StatelessWidget {
         title: Text('SingleChildScrollView(100)'),
         centerTitle: true,
       ),
-      //Center, Container, SizedBox 는 정상 (항상은 아닌듯?? ㅋㅋ)
-      //Column, Expanded, Row 는 오류 (항상은 아닌듯?? ㅋㅋ)
       body: Container(
         //-------------------------------------------------------------------------
         // 1. SingleChildScrollView

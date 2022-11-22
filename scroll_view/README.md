@@ -45,12 +45,15 @@
 
 <img src="./README_images/listview_100_1.png" height="500">
 
-
 ### 5. ListView.builder method
- - 반복적으로 비슷한 형태의 Widget들을 보여줘야 하는 경우에 사용한다.
- - (참고, 단순히 for 문이 수행 + 각 index별로 빈 Row/Column행이 추가 된다.)
- - List별 사이에 공간 및 구분자가 필요 없는 경우에 사용
- - itemCount 숫자만큼 itemBuilder의 callback 함수가 수행 된다.
+ - 특징 1
+ > 화면에 보여지는 item만 렌더링을 진행한다.
+
+ - 특징 2
+ > 반복적으로 비슷한 형태의 Widget들을 보여줘야 하는 경우에 사용한다.
+ >(참고, 단순히 for 문이 수행 + 각 index별로 빈 Row/Column행이 추가 된다.)
+ > List별 사이에 공간 및 구분자가 필요 없는 경우에 사용
+ > itemCount 숫자만큼 itemBuilder의 callback 함수가 수행 된다.
 
  - ListView.builder 참고소스 (기본)
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listview/listview_100.dart
@@ -65,10 +68,15 @@
 <img src="./README_images/listview_builder_100_1.png" height="500">
 
 ### 6. ListView.seperated method
- - ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.
- - 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 각각 수행 된다.
- > * separatorBuilder
- >   - List별 중간에 Line등의 Widget을 주로 넣을 때 사용 된다.
+ - 특징 1
+ > 화면에 보여지는 item만 렌더링을 진행한다.
+
+ - 특징 2
+ > ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.
+ > 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 각각 수행 된다.
+
+ - separatorBuilder
+ > List별 중간에 Line등의 Widget을 주로 넣을 때 사용 된다.
 
  - ListView.seperated 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listview/listview_seperated_100.dart
@@ -116,8 +124,7 @@
  - 사용자가 scroll을 하면 그때 추가 렌더링을 진행한다.
  - 살아진 widget들은 메모리에서 삭제 된다. 그런 후 다시 보려고 scroll하면 재렌더링 된다.
  - GridView() widget은 되는지 테스트 못해 봤음
- - GridView.builder, ListView.separated 에서는 위와 같은 렌더링 특징을 가지고 있음.
- 
+ - GridView.builder 에서는 위와 같은 렌더링 특징을 가지고 있음.
  > GridView.counter, GridView.extent는 모든 Widget이 한번에 렌더링됨 (144개 까지 테스트)
 
 ### 4. GridView Widget
@@ -132,8 +139,12 @@
 <img src="./README_images/gridview_100_1.png" height="500">
 
 ### 5. GridView.builder method
- - gridDelegate, itemBuilder, itemCount : 속성이 존재 한다.
- - itemCount : 속성은 Required가 아님. 넘기지 않으면 무한으로 수로 적용된다.
+ - 특징 1
+ > 화면에 보여지는 item만 렌더링을 진행한다.
+
+ - 특징 2
+ > gridDelegate, itemBuilder, itemCount : 속성이 존재 한다.
+ > itemCount : 속성은 Required가 아님. 넘기지 않으면 무한으로 수로 적용된다.
 
  - GridView.builder 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/gridview/gridview_builder_100.dart

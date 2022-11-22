@@ -21,3 +21,4 @@ initState : 이때는 context가 생성이 안되어 있음
 didChangeDependencies : 이때는 context가 생성되어 있음
                         그래서 media Widget을 사용해야 한다면 이곳에서 해야 한다.
 					     arg로 넘길때 모두 rebuild된다.
+

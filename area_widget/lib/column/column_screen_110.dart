@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/*
+  Desc : Column + Row Widget을 이용해서 구성
+*/
 class ColumnScreen110 extends StatelessWidget {
   const ColumnScreen110({super.key});
 

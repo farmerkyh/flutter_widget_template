@@ -10,8 +10,25 @@
  > Error : A RenderFlex overflowed by 4526 pixels on the bottom.
  > 4526는 화면을 벗어난 pixel 수
 
-### 2. Column + ListView 포함시키기
- - Column ()
+### 2. Column + ListView 포함시키기 예문
+##### 2.1 예문 1
+```dart
+    child: Column(
+    children: [
+        ListView.builder(
+        itemCount: 20,
+        itemBuilder: (BuildContext context, int index) {
+            return const Text('ListView List');
+        },
+        ),
+    ],
+    ),
+```
+ - 실행결과
+ > The following assertion was thrown during performResize.
+ > Vertical viewport was given unbounded height
+
+
 
 
 # 5. Row

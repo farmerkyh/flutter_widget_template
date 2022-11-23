@@ -1,5 +1,5 @@
-> 이 문서는 다른 블로그에서 다루는 내용은 기술하지 않았다.
-> 문서를 만든 목적은 Scroll View의 종류와 개발도중 어떤 Widget을 선택할지에 대한 고민을 줄이고자 하기 위함이다.
+> . 이 문서는 다른 블로그에서 다루는 내용은 기술하지 않았다.<br>
+> . 문서를 만든 목적은 Scroll View의 종류와 개발도중 어떤 Widget을 선택할지에 대한 고민을 줄이고자 하기 위함이다.
 
 # 1. Scroll View 종류
   - ListView
@@ -16,9 +16,9 @@
  - ListView.builder method
  - Listview.seperated method
  - ListView.custom method
- > 모두 같은 소스에서 상속 받았음(scroll_view.dart) [GridView도 동일]<br>
- > 즉, ListView class에 나머지는 method 방식으로 Widget을 생성하는 것이다.<br>
- > ListView class의 생성자는 Required가 없기 때문이 가능한 호출방식이다.<br>
+ > . 모두 같은 소스에서 상속 받았음(scroll_view.dart) [GridView도 동일]<br>
+ > . 즉, ListView class에 나머지는 method 방식으로 Widget을 생성하는 것이다.<br>
+ > . ListView class의 생성자는 Required가 없기 때문이 가능한 호출방식이다.<br>
 
 ### 2. 정의
  - ListView자체는 보여주는 Widget은 아니고, 스크롤을 해주는 위젯을 생성한다.
@@ -35,10 +35,10 @@
 
 ### 4. ListView Widget
  - 특징
- > itemBuilder가 존재하지 않으며, count가 존재 하지 않는다.<br>
- > children하위의 Widget들로 Grid가 구성 된다.<br>
- > 한번만 수행한다.<br>
- > count관련 속성이 없다.<br>
+ > . itemBuilder가 존재하지 않으며, count가 존재 하지 않는다.<br>
+ > . children하위의 Widget들로 Grid가 구성 된다.<br>
+ > . 한번만 수행한다.<br>
+ > . count관련 속성이 없다.<br>
 
  - 비교되는 Widget
  > SingleChildScrollView
@@ -52,10 +52,10 @@
  > 화면에 보여지는 item만 렌더링을 진행한다.
 
  - 특징 2
- > 반복적으로 비슷한 형태의 Widget들을 보여줘야 하는 경우에 사용한다.<br>
- >(참고, 단순히 for 문이 수행 + 각 index별로 빈 Row/Column행이 추가 된다.)<br>
- > List별 사이에 공간 및 구분자가 필요 없는 경우에 사용<br>
- > itemCount 숫자만큼 itemBuilder의 callback 함수가 수행 된다.<br>
+ > . 반복적으로 비슷한 형태의 Widget들을 보여줘야 하는 경우에 사용한다.<br>
+ > . (참고, 단순히 for 문이 수행 + 각 index별로 빈 Row/Column행이 추가 된다.)<br>
+ > . List별 사이에 공간 및 구분자가 필요 없는 경우에 사용<br>
+ > . itemCount 숫자만큼 itemBuilder의 callback 함수가 수행 된다.<br>
 
  - ListView.builder 참고소스 (기본)
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listview/listview_100.dart
@@ -71,11 +71,11 @@
 
 ### 6. ListView.seperated method
  - 특징 1
- > 화면에 보여지는 item만 렌더링을 진행한다.
+ > . 화면에 보여지는 item만 렌더링을 진행한다.
 
  - 특징 2
- > ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.<br>
- > 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 각각 수행 된다.<br>
+ > . ListView.builder Widget성격에 separatorBuilder 속성이 추가된 Widget이다.<br>
+ > . 한번 반복 수행 시 itemBuilder, separatorBuilder 2개의 callback함수가 각각 수행 된다.<br>
 
  - separatorBuilder
  > List별 중간에 Line등의 Widget을 주로 넣을 때 사용 된다.
@@ -91,10 +91,10 @@
  - custom() 생성자를 사용하면 목록의 자식이 빌드되는 방식에 대한 사용자 지정 기능을 사용하여 ListView를 빌드 할 수 있다.
  - 이를 위해 필요한 주요 매개 변수는 항목을 빌드하는 SliverChildDelegate이다.
  - SliverChildDelegates의 유형
- > SliverChildListDelegate, SliverChildBuilderDelegate 2가지가 있다.<br>
- > 자신의 델리게이트를 구축하기 위해이를 사용하거나 하위 클래스화할 수 있다.<br>
- > ListView.builder는 기본적으로 SliverChildBuilderDelegate가있는 ListView.custom이다.<br>
- > ListView 기본 생성자는 SliverChildListDelegate가있는 ListView.custom처럼 동작한다.<br>
+ > . SliverChildListDelegate, SliverChildBuilderDelegate 2가지가 있다.<br>
+ > . 자신의 델리게이트를 구축하기 위해이를 사용하거나 하위 클래스화할 수 있다.<br>
+ > . ListView.builder는 기본적으로 SliverChildBuilderDelegate가있는 ListView.custom이다.<br>
+ > . ListView 기본 생성자는 SliverChildListDelegate가있는 ListView.custom처럼 동작한다.<br>
 
  - ListView.custom 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listview/listview_custom_100.dart
@@ -108,18 +108,18 @@
  - GridView.count method
  - GridView.custom method
  - GridView.extend method
- > 모두 같은 소스에서 상속 받았음(scroll_view.dart) [ListView도 동일]<br>
- > 즉, GridView class에 나머지는 method 방식으로 Widget을 생성하는 것이다.<br>
- > GridView class의 생성자는 Required가 없기 때문이 가능한 호출방식이다.<br>
+ > . 모두 같은 소스에서 상속 받았음(scroll_view.dart) [ListView도 동일]<br>
+ > . 즉, GridView class에 나머지는 method 방식으로 Widget을 생성하는 것이다.<br>
+ > . GridView class의 생성자는 Required가 없기 때문이 가능한 호출방식이다.<br>
 
 ### 2. 정의
  - 격자형태로 Widget을 정렬하는 Widget이다.
  - scrollDirection 속성에 따라서 좌,우로 화면의 영역를 벗어날 경우 scroll이 되도록 해주는 Widget이다.
  - children속성에 기술된 Widget을 기준으로 격자형태로 정렬해준다.
  - gridDelegate
- > 격자형태에 대한 구분값들을 속성으로 갖고 있다.<br>
- > children내부에 width, height값들은 gridDelegate-> childAspectRatio 속성값의 범위를 넘어설 수 없다.<br>
- > width, height에 대한 size는 모두 childAspectRatio 속성값에 의해 정해진다.<br>
+ > . 격자형태에 대한 구분값들을 속성으로 갖고 있다.<br>
+ > . children내부에 width, height값들은 gridDelegate-> childAspectRatio 속성값의 범위를 넘어설 수 없다.<br>
+ > . width, height에 대한 size는 모두 childAspectRatio 속성값에 의해 정해진다.<br>
 
 ### 3. 특징 (ListView와 동일 특징)
  - 화면에 보여지는 item만 렌더링을 진행한다.
@@ -175,8 +175,8 @@
  - 가로 혹은 세로를 채울 Widget의 개수를 하나의 Widget의 너비를 통해 동적으로 구한다.
  - children하위의 Widget들로 Grid가 구성 된다.
  - maxCrossAxisExtent (필수)
- > 한개의 그리드 아이템의 최대넓이(최소?) 값으로 로우 혹은 컬럼의 갯수 자동계산 되어 적용 된다.<br>
- > crossAxisCount 와 같은 속성이 없다.<br>
+ > . 한개의 그리드 아이템의 최대넓이(최소?) 값으로 로우 혹은 컬럼의 갯수 자동계산 되어 적용 된다.<br>
+ > . crossAxisCount 와 같은 속성이 없다.<br>
 
  - GridView.extend 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/gridview/gridview_extent_100.dart
@@ -185,9 +185,9 @@
 
 # 4. ListView, GridView 통합
  -  상속도
- > ListView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
- > GridView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
- > 모두 같은 소스에서 상속 받았음(scroll_view.dart)<br>
+ > . ListView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
+ > . GridView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
+ > . 모두 같은 소스에서 상속 받았음(scroll_view.dart)<br>
 
 # 5. ListWheelScrollView, ClickableListWheelScrollView
 ### 1. ListWheelScrollView 특징

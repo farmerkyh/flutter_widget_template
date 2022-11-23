@@ -25,8 +25,7 @@
  <pre>
  >  Scaffold + (Text or Container or SizedBox, Row, Column ... ) : 정상
  >  Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
- >  Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상
- </pre>
+ >  Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상 </pre>
 
  - (Row,Column,Flex) + (Expanded, Flexible) : 정상
  - Row               + (Text or Container or SizedBox ... ) : 오류

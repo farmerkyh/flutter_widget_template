@@ -8,7 +8,7 @@
  - 'Container속성에 height를 10,000을 줘도 overflow가 발생하지 않는다.'
  - 'Container는 남은 공간에 최대한 영역을 찾이 하면서 child Widget이 영역을 넘어가도 overflow가 발생하지 않는다.'
  > Container widget의 child에 있는 Widget은 overflow가 절대로 발생하지 않는다. <br>
- > (child -> child -> child 하위들은 아님)<br>
+ > (child -> child -> child 하위들은 아님) <br>
 
  - Column + Container(height:10,000) 을 했을 경우에는 overflow가 발생한다.
  > 이유는 Column Widget은 children Widget들의 최대 크기에 따라간다.

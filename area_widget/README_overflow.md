@@ -1,10 +1,12 @@
 # 1. Overflow
 ### 1.1 Widget overflow 및 size 특징 분류
- > 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.<br>
- > 두번째, child Widget들의 size가 화면보다 커지면 같이 커지는 Widget들이 있다. overflow발생.<br>
- > 세번째, 위 두가지는 Widget본인의 성격에 의해 정해진 특징이다.<br>
- >        하지만 본인 성격도 중요하지만 Parent Widget성격에 따라가는 경우도 있다.<br>
- >        즉, parent가 overflow발생할 수 있는 Widget이면 child가 scroll기능이 있어도 overflow가 발생한다.<br>
+<pre>
+  - 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.
+ - 두번째, child Widget들의 size가 화면보다 커지면 같이 커지는 Widget들이 있다. overflow발생.
+ - 세번째, 위 두가지는 Widget본인의 성격에 의해 정해진 특징이다.
+ -        하지만 본인 성격도 중요하지만 Parent Widget성격에 따라가는 경우도 있다.
+ -        즉, parent가 overflow발생할 수 있는 Widget이면 child가 scroll기능이 있어도 overflow가 발생한다.
+</pre>
 
 ### 1.2 Overflow에 따른 Widget 분류 
 |절대 발생하지 않는  Widget |하위 Widget Size에 따라서 결정|상위Widget에 따라서 달라지는 Widget|
@@ -46,8 +48,10 @@
  - scroll 되는  Widget은 아니다.
 
  - Scaffold + Text
- > Scaffold 안에 Text를 overflow가 발생하도록 넣어 본다. 하지만 발생하지 않는다.<br>
- > Scaffold는 자체적으로 scroll기능은 없지만, child Widget의 최대 size보다 커지지는 않는다.<br>
+```dart 
+ . Scaffold 안에 Text를 overflow가 발생하도록 넣어 본다. 하지만 발생하지 않는다.
+ . Scaffold는 자체적으로 scroll기능은 없지만, child Widget의 최대 size보다 커지지는 않는다.
+```
 
 ```dart
   return Scaffold(
@@ -73,14 +77,14 @@
     ],
   ),
 ```
- - 실행결과 - 오류
+ - 실행결과 - Error
 ```dart
  . The following assertion was thrown during performResize.
  . Vertical viewport was given unbounded height.
  . (세로 뷰포트에 제한 없는 높이가 지정되었습니다.)
 ```
  
- - 오류 이유
+ - Error 이유
 ```dart
  . Column 특징 : Column문서 확인
  . 기본적으로 ListView는 Scaffold child로 사용 시 자동 scroll 되어 overflow 오류가 나지 않는다.

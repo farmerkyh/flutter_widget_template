@@ -50,7 +50,7 @@
 <pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |
-| left foo <br> left bar <br> left baz   | right foo <br> right bar <br> right baz  | middle bar <br> middle bar  <br?middle bar  |
+| left foo < br > left bar < br > left baz   | right foo < br > right bar < br > right baz  | middle bar < br > middle bar  < br >middle bar  |
 </pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |

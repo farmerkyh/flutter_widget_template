@@ -73,20 +73,20 @@
     ],
   ),
 ```
- - 실행결과
+ - 실행결과 - 오류
 ```dart
  . The following assertion was thrown during performResize.
  . Vertical viewport was given unbounded height.
  . (세로 뷰포트에 제한 없는 높이가 지정되었습니다.)
 ```
  
- - 이유
+ - 오류 이유
 ```dart
  . Column 특징 : Column문서 확인
- . https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/README.md
  . 기본적으로 ListView는 Scaffold child로 사용 시 자동 scroll 되어 overflow 오류가 나지 않는다.
  . 하지만 Column children으로 ListView가 포함 될 경우에는 Column Widget의 특성에 종속 된다.
 ```
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/README.md
 
 # 4. Scffold + Container + ListView 예문
 ```dart

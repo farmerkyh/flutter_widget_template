@@ -17,8 +17,8 @@
 |-------------------------|-----------------------------|
 |절대 발생하지 않는  Widget          | Parent, Child에 어떤 Widget들이 와도 overflow발생 안함 |
 |하위 Widget Size에 따라서 결정      | 하위 Widget들의 Size가 화면보다 커질 경우 overflow발생 |
-|상위Widget에 따라서 달라지는 Widget | 상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함 |
-|                                  | 상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
+|상위Widget에 따라서 달라지는 Widget | 1.상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함 ||
+|                                  | 2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
 
 # 2. Scaffold + Text 예문
  - Scaffold child에는 어떤 Widget이 와도 overflow가 발생하지 않는다.

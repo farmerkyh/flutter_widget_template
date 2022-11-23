@@ -26,10 +26,28 @@
 ### 1. expanded 특징
  - 부모의 남은 범위를 flex의 비율에 맞춰서 "모두" 가져간다. 
  - expanded를 적용하지 않은 Widget이 우선적으로 필요한 Size를 적용시키고, expanded가 남은 것들을 가져간다고 생각하면 쉽다.
+ - child Widget의 size가 화면을 넘어가도 화면범위 안에서만 보여진다. (overflow발생 안함)
 
 ### 2. expanded 용도
  - Row나 Column등에서 핸드폰 화면에 맞게 균일하게 배치하기 위해서 사용함.
  - pixel기준으로 할 경우, 핸드폰 규격에 맞추기 어렵지만, expanded를 사용할 경우 핸드폰 규격에 맞추기 쉽다.
+
+### 3. 사용가능 Widget
+ - Flexible Widget or Expanded Widget들은 반드시 Column, Row Widget안에 사용해야 된다.
+ > Expanded는 Flexible Widget에서 상속받았다.
+ - Scffold, Container, SizedBox  등에 사용 시 오류 발생
+ > 오류 내용 
+```dart
+The following assertion was thrown while looking for parent data.:
+Incorrect use of ParentDataWidget.
+
+The following ParentDataWidgets are providing parent data to the same RenderObject:
+- Expanded(flex: 1) (typically placed directly inside a Flex widget)
+- LayoutId-[<_ScaffoldSlot.body>](id: _ScaffoldSlot.body) (typically placed directly inside a CustomMultiChildLayout widget)
+However, a RenderObject can only receive parent data from at most one ParentDataWidget.
+
+Usually, this indicates that at least one of the offending ParentDataWidgets listed above is not placed directly inside a compatible ancestor widget.
+```
 
 # 4. Column
 ### 1. Column 특징

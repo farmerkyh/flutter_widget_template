@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 /*
-  Desc : Column + ListView Widget을 이용해서 구성
+  Desc : Scaffold + Column + ListView Widget을 이용해서 구성
+  수행결과 : 오류 (Vertical viewport was given unbounded height.)
 */
-class ListViewColumn100 extends StatelessWidget {
-  const ListViewColumn100({super.key});
+class ColumnListView100 extends StatelessWidget {
+  const ColumnListView100({super.key});
 
   @override
   Widget build(BuildContext context) {

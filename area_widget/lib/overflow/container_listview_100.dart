@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 /*
-  Desc : Container + ListView Widget을 이용해서 구성
+  Desc : Scaffold + Container + ListView Widget을 이용해서 구성
+  수행결과 : 정상
 */
-class ListViewContainer100 extends StatelessWidget {
-  const ListViewContainer100({super.key});
+class ContainerListView100 extends StatelessWidget {
+  const ContainerListView100({super.key});
 
   @override
   Widget build(BuildContext context) {

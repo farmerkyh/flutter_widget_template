@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 /*
-  Desc : SizedBox + ListView Widget을 이용해서 구성
+  Desc : Scaffold + SizedBox + ListView Widget을 이용해서 구성
 */
-class ListViewSizedBox100 extends StatelessWidget {
-  const ListViewSizedBox100({super.key});
+class SizedBoxListView100 extends StatelessWidget {
+  const SizedBoxListView100({super.key});
 
   @override
   Widget build(BuildContext context) {

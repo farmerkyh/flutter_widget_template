@@ -56,6 +56,17 @@
 |:------------- | -------------:|:-------------:  |
 | left foo <br> left bar <br> left baz   | right foo <br> right bar <br> right baz  | middle bar <br> middle bar  <br>middle bar  |
 
+# 4. BlockQuote
+### 4.1 예문/결과
+<pre>
+> This is a first blockqute.
+>	> This is a second blockqute.
+>	>	> This is a third blockqute.
+</pre>
+> This is a first blockqute.
+>	> This is a second blockqute.
+>	>	> This is a third blockqute.
+
 
 # 2. 기타 예문/결과 
 <pre>

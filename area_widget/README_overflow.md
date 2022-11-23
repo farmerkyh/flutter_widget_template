@@ -1,7 +1,7 @@
 # 1. Overflow
 ### 1.1 Widget overflow 및 size 특징 분류
 <pre>
-  - 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.
+ - 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.
  - 두번째, child Widget들의 size가 화면보다 커지면 같이 커지는 Widget들이 있다. overflow발생.
  - 세번째, 위 두가지는 Widget본인의 성격에 의해 정해진 특징이다.
  -        하지만 본인 성격도 중요하지만 Parent Widget성격에 따라가는 경우도 있다.
@@ -12,8 +12,9 @@
 |절대 발생하지 않는  Widget |하위 Widget Size에 따라서 결정|상위Widget에 따라서 달라지는 Widget|
 |-------------------------|-----------------------------|---------------------------------|
 | Scaffold                | Row                         |                                   |
-| Expanded                | Column                      | 왼쪽 widget들 제외한 모든 Widget(?) |
-| Flexible                | Flex (?)                    | Text, Container, SizedBox ...    |
+| ^Expanded                | Column                      | 왼쪽 widget들 제외한 모든 Widget(?) |
+| ^Flexible                | Flex (?)                    | Text, Container, SizedBox ...    |
+
 
 | 분류 | 정의 |
 |-------------------------|-----------------------------|

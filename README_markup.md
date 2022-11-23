@@ -31,8 +31,47 @@
   2. Item 2
   3. Item 3
 
-# 3. Table
-### 3.1 예문/결과 - 정렬하기
+# 3. BlockQuote
+### 3.1 예문/결과 - >
+<pre>
+> This is a first blockqute.
+>	> This is a second blockqute.
+>	>	> This is a third blockqute.
+</pre>
+> This is a first blockqute.
+>	> This is a second blockqute.
+>	>	> This is a third blockqute.
+
+### 3.2 예문/결과 - > 순서없는 목록(글머리 기호: *, +, - 지원)
+<pre>
+* 빨강
+  * 녹색
+    * 파랑
+
++ 빨강
+  + 녹색
+    + 파랑
+
+- 빨강
+  - 녹색
+    - 파랑
+</pre>
+
+* 빨강
+  * 녹색
+    * 파랑
+
++ 빨강
+  + 녹색
+    + 파랑
+
+- 빨강
+  - 녹색
+    - 파랑
+
+
+# 4. Table
+### 4.1 예문/결과 - 정렬하기
 <pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |
@@ -46,7 +85,7 @@
 | left bar      | right bar     | middle bar      |
 | left baz      | right baz     | middle bar      |
 
-### 3.2 예문/결과 - 하나의 cell의 n줄 넣기
+### 4.2 예문/결과 - 하나의 cell의 n줄 넣기
 <pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |
@@ -56,16 +95,6 @@
 |:------------- | -------------:|:-------------:  |
 | left foo <br> left bar <br> left baz   | right foo <br> right bar <br> right baz  | middle bar <br> middle bar  <br>middle bar  |
 
-# 4. BlockQuote
-### 4.1 예문/결과
-<pre>
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-</pre>
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
 
 
 # 2. 기타 예문/결과 

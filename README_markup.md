@@ -2,28 +2,32 @@
 - 6단계 : #, ##,... ######
 
 # 2. Ordered
-- 예문/결과
+- 예문/결과 - type 1
 <pre>
  * Item 1
  * Item 2
- * Item 3
 </pre>
  * Item 1
  * Item 2
- * Item 3
 
-- 예문/결과
+- 예문/결과 - type 2
+<pre>
+ - Item 1
+ - Item 2
+</pre>
+ - Item 1
+ - Item 2
+
+- 예문/결과 - type 3
 <pre>
   1. Item 1
   2. Item 2
   3. Item 3
-  4. Item 4
 </pre>
   1. Item 1
   2. Item 2
-  3. Item down step1
-  4. 2. Item down step2
-  
+  3. Item 3
+
 # 2. 기타
 <pre>
  - 취소선은 : ~~취소문구~~

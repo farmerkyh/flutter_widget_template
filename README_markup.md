@@ -2,7 +2,7 @@
 - 6단계 : #, ##,... ######
 
 # 2. Ordered
-- 예문/결과 - type 1
+### 2.1 예문/결과 - type 1 (type1과 type2는 줄 간격이 다름)
 <pre>
  * Item 1
  * Item 2
@@ -10,7 +10,7 @@
  * Item 1
  * Item 2
 
-- 예문/결과 - type 2
+### 2. 예문/결과 - type 2 (type1과 type2는 줄 간격이 다름)
 <pre>
  - Item 1
  - Item 2
@@ -18,7 +18,7 @@
  - Item 1
  - Item 2
 
-- 예문/결과 - type 3
+### 2. 예문/결과 - type 3
 <pre>
   1. Item 1
   2. Item 2

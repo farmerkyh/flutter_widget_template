@@ -21,14 +21,17 @@
 |^                                  |  2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
 
 ### Overflow에 예제
- - Scaffold + (Text or Container or SizedBox, Row, Column ... ) : 정상
- - Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
- - Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상
+ - 정상
+ > <pre>
+   Scaffold + (Text or Container or SizedBox, Row, Column ... ) : 정상
+   Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
+   Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상
+   </pre>
 
  - (Row,Column,Flex) + (Expanded, Flexible) : 정상
- - <pre>Row               + (Text or Container or SizedBox ... ) : 오류</pre>
- - <pre>Column            + (Text or Container or SizedBox ... ) : 오류</pre>
- - <pre>Flex              + (Text or Container or SizedBox ... ) : 오류</pre>
+ - Row               + (Text or Container or SizedBox ... ) : 오류
+ - Column            + (Text or Container or SizedBox ... ) : 오류
+ - Flex              + (Text or Container or SizedBox ... ) : 오류
 
 ### Overflow Widget들 찾아 내는 방법
  - 1. Scaffold 하위에 child로 배치 하여, Size를 overflow하도록 설정 한다.

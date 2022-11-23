@@ -175,9 +175,8 @@
  - 가로 혹은 세로를 채울 Widget의 개수를 하나의 Widget의 너비를 통해 동적으로 구한다.
  - children하위의 Widget들로 Grid가 구성 된다.
  - maxCrossAxisExtent (필수)
- > 한개의 그리드 아이템의 최대넓이(최소?) 값으로 로우 혹은 컬럼의 갯수 자동계산 되어 적용 된다.
- > crossAxisCount 와 같은 속성이 없다.
-
+ > 한개의 그리드 아이템의 최대넓이(최소?) 값으로 로우 혹은 컬럼의 갯수 자동계산 되어 적용 된다.<br>
+ > crossAxisCount 와 같은 속성이 없다.<br>
 
  - GridView.extend 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/gridview/gridview_extent_100.dart
@@ -186,9 +185,9 @@
 
 # 4. ListView, GridView 통합
  -  상속도
- > ListView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget
- > GridView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget
- > 모두 같은 소스에서 상속 받았음(scroll_view.dart)
+ > ListView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
+ > GridView -> BoxScrollView -> ScrollView -> StatelessWidget-> Widget<br>
+ > 모두 같은 소스에서 상속 받았음(scroll_view.dart)<br>
 
 # 5. ListWheelScrollView, ClickableListWheelScrollView
 ### 1. ListWheelScrollView 특징
@@ -209,8 +208,8 @@
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_105.dart
 
  - ListWheelScrollView외부에서 GestureDetector()로 감싸기 (즉, GestureDetector() 내부 child로 ListWheelScrollView 를 정의한다.)
- > 완벽하지는 않지만 onTab 기능은 작동함
- > 이때 onTab은 각 Item에 디한 onTab이 아니고, ListWheelScrollView Widget에 대한 onTab 이다.
+ > 완벽하지는 않지만 onTab 기능은 작동함<br>
+ > 이때 onTab은 각 Item에 디한 onTab이 아니고, ListWheelScrollView Widget에 대한 onTab 이다.<br>
 
  - ListWheelScrollView - onTab 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/scroll_view/lib/listwheelscrollview/list_whell_scroll_view_106.dart

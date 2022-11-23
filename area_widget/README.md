@@ -7,8 +7,8 @@
 ### 2. Container Overflow 이슈
  - 'Container속성에 height를 10,000을 줘도 overflow가 발생하지 않는다.'
  - 'Container는 남은 공간에 최대한 영역을 찾이 하면서 child Widget이 영역을 넘어가도 overflow가 발생하지 않는다.'
- > Container widget의 child에 있는 Widget은 overflow가 절대로 발생하지 않는다. 
- > (child -> child -> child 하위들은 아님)
+ > Container widget의 child에 있는 Widget은 overflow가 절대로 발생하지 않는다. <br>
+ > (child -> child -> child 하위들은 아님)<br>
 
  - Column + Container(height:10,000) 을 했을 경우에는 overflow가 발생한다.
  > 이유는 Column Widget은 children Widget들의 최대 크기에 따라간다.
@@ -54,8 +54,8 @@ Usually, this indicates that at least one of the offending ParentDataWidgets lis
  - 주측에서 찾이 할 수 있는 공간은 모두 찾이 한다. (default : MainAxisSize.max)
  - 반대측은 Widget 크기에 따라서 최소한의 크기만 찾이 한다.
  - `중요 : 내부 Widget들의 size가 화면보다 커질 경우 overflow 오류 발생 (★★)`
- > Error : A RenderFlex overflowed by 4526 pixels on the bottom.
- > 4526는 화면을 벗어난 pixel 수
+ > Error : A RenderFlex overflowed by 4526 pixels on the bottom.<br>
+ > 4526는 화면을 벗어난 pixel 수<br>
  - 즉, Column의 children Widget들이 화면보다 작으면 화면만큼(남은만큼) 최대한 커지고, 
  -     내부  Widget들이 화면보다 커지면 내부 Widget들의 Size만큼 Column Widget도 커진다. (농부생각)
 

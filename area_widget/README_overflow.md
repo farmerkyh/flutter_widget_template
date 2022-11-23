@@ -21,17 +21,20 @@
 |                                  |  2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
 
 ### Overflow에 예제
+ - Overflow발생 안함
 ```dart
- -  Scaffold + (Text or Container or SizedBox, Row, Column ... ) : 정상
- -  Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
- -  Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상  
+ -  Scaffold + (Text or Container or SizedBox, Row, Column ... )
+ -  Expanded + (Text or Container or SizedBox, Row, Column ... )
+ -  Flexible + (Text or Container or SizedBox, Row, Column ... )
+
+- (Row,Column,Flex) + (Expanded, Flexible)
 ```
- 
+
+ - Overflow발생 함
 ```dart
- - (Row,Column,Flex) + (Expanded, Flexible) : 정상
- - Row               + (Text or Container or SizedBox ... ) : 오류
- - Column            + (Text or Container or SizedBox ... ) : 오류
- - Flex              + (Text or Container or SizedBox ... ) : 오류
+ - Row               + (Text or Container or SizedBox ... )
+ - Column            + (Text or Container or SizedBox ... )
+ - Flex              + (Text or Container or SizedBox ... )
 ```
 
 ### Overflow Widget들 찾아 내는 방법

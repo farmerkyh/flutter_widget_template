@@ -116,9 +116,11 @@ class MyGrid extends StatelessWidget {
             createLeftOneMenu(context, "Scaffold + Text (ok)", const ScaffoldText100()),
             createLeftOneMenu(context, "Column + ListView (error)", const ColumnListView100()),
             createLeftOneMenu(context, "Column + Expanded (ok)", const ColumnExpanded100()),
-            createLeftOneMenu(context, "Container + ListView", const ContainerListView100()),
-            createLeftOneMenu(context, "SizedBox + ListView", const SizedBoxListView100()),
+            createLeftOneMenu(context, "Container + ListView (ok)", const ContainerListView100()),
+            createLeftOneMenu(context, "SizedBox + ListView (ok)", const SizedBoxListView100()),
             createLeftOneMenu(context, "Scaffold + Expanded(error)", const ScaffoldExpanded100()),
+
+            const Divider(height: 5),
           ],
         ),
       ),

@@ -33,7 +33,7 @@
  - pixel기준으로 할 경우, 핸드폰 규격에 맞추기 어렵지만, expanded를 사용할 경우 핸드폰 규격에 맞추기 쉽다.
 
 ### 3. 사용가능 Widget
- - Flexible Widget or Expanded Widget들은 반드시 Column, Row Widget안에 사용해야 된다.
+ - Flexible Widget or Expanded Widget들은 반드시 Column, Row, Flex(?) Widget안에 사용해야 된다.
  > Expanded는 Flexible Widget에서 상속받았다.
  - Scffold, Container, SizedBox  등에 사용 시 오류 발생
  > 오류 내용 

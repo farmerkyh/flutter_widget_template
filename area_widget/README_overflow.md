@@ -9,9 +9,9 @@
 ### Overflow에 따른 Widget 분류 
 |절대 발생하지 않는  Widget |하위 Widget Size에 따라서 결정|상위Widget에 따라서 달라지는 Widget|
 |-------------------------|-----------------------------|---------------------------------|
-| Scaffold                | Row                         | Text, Container, SizedBox ...   |
-| Expanded                | Column                      | 왼쪽 widget들 제외한 모두(?)     |
-| Flexible (미테스트)      |                             |                                 |
+| Scaffold                | Row                         |                                   |
+| Expanded                | Column                      | 왼쪽 widget들 제외한 모든 Widget(?) |
+| Flexible                | Flex (?)                    | Text, Container, SizedBox ...    |
 
 | 분류 | 정의 |
 |-------------------------|-----------------------------|
@@ -19,6 +19,20 @@
 |하위 Widget Size에 따라서 결정      | 하위 Widget들의 Size가 화면보다 커질 경우 overflow발생 |
 |/상위Widget에 따라서 달라지는 Widget | 1.상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함 |
 |^                                  |  2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
+
+### Overflow에 예제
+ - Scaffold + (Text or Container or SizedBox, Row, Column ... ) : 정상
+ - Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
+ - Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상
+
+ - (Row,Column,Flex) + (Expanded, Flexible) : 정상
+ - Row               + (Text or Container or SizedBox ... ) : 오류
+ - Column            + (Text or Container or SizedBox ... ) : 오류
+ - Flex              + (Text or Container or SizedBox ... ) : 오류
+
+### Overflow Widget들 찾아 내는 방법
+ - 1. Scaffold 하위에 child로 배치 하여, Size를 overflow하도록 설정 한다.
+ - 2. (Row,Column,Flex) 하위에 children로 배치 하여, Size를 overflow하도록 설정 한다.
 
 # 2. Scaffold + Text 예문
  - Scaffold child에는 어떤 Widget이 와도 overflow가 발생하지 않는다.

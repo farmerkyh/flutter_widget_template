@@ -13,7 +13,10 @@
     1. Item down step1
     2. Item down step2
 </pre>
-
+  1. Item 1
+  2. Item 2
+    1. Item down step1
+    2. Item down step2
 # 2. 기타
 <pre>
  - 취소선은 : ~~취소문구~~

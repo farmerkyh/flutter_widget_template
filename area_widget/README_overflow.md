@@ -11,7 +11,7 @@
 ### 1.2 Overflow에 따른 Widget 분류 
 |절대 발생하지 않는  Widget |하위 Widget Size에 따라서 결정|상위Widget에 따라서 달라지는 Widget|
 |:------------------------|:----------------------------|:--------------------------------|
-| Scaffold \\ Expanded \\ Flexible                | Row                         |                                   |
+| Scaffold <br/> Expanded <br/> Flexible                | Row                         |                                   |
 |                 | Column                      | 왼쪽 widget들 제외한 모든 Widget(?) |
 |                 | Flex (?)                    | Text, Container, SizedBox ...    |
 

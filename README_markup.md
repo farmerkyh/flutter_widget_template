@@ -70,8 +70,8 @@
     - 파랑
 
 
-# 4. Table
-### 4.1 예문/결과 - 정렬하기
+# 10. Table
+### 10.1 예문/결과 - 정렬하기
 <pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |
@@ -85,7 +85,7 @@
 | left bar      | right bar     | middle bar      |
 | left baz      | right baz     | middle bar      |
 
-### 4.2 예문/결과 - 하나의 cell의 n줄 넣기
+### 10.2 예문/결과 - 하나의 cell의 n줄 넣기
 <pre>
 | Left columns  | Right columns | Middle columns  |
 |:------------- | -------------:|:-------------:  |
@@ -95,18 +95,33 @@
 |:------------- | -------------:|:-------------:  |
 | left foo <br> left bar <br> left baz   | right foo <br> right bar <br> right baz  | middle bar <br> middle bar  <br>middle bar  |
 
+### 11. Code Block
+ - <pre><code>{code}</code></pre> 
+ - ```dart .... ```   [문법강조(Syntax highlighting)]
 
 
-# 2. 기타 예문/결과 
+
+
+# 99. 기타 예문/결과 
 <pre>
  - 취소선은 : ~~취소문구~~
  - 엔터키 : <br>
  - 이탤릭체 : *문구*
  - 볼드체 : **문구**, __문구__
  - 이탤릭체 + 볼드체 : __문구 **문구** __
+ - 수평선 : * * *
+           ***
+           *****
+           - - -
+           ---------------------------------------
 </pre>
  - 취소선은 : ~~취소문구~~
  - 엔터키 : <br>
  - 이탤릭체 : *문구*
  - 볼드체 : **문구**, __문구__
  - 이탤릭체 + 볼드체 : __문구 **문구** __
+  - 수평선 : * * *
+           ***
+           *****
+           - - -
+           ---------------------------------------

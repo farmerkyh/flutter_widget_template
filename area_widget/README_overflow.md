@@ -17,8 +17,8 @@
 |-------------------------|-----------------------------|
 |절대 발생하지 않는  Widget          | Parent, Child에 어떤 Widget들이 와도 overflow발생 안함 |
 |하위 Widget Size에 따라서 결정      | 하위 Widget들의 Size가 화면보다 커질 경우 overflow발생 |
-|/상위Widget에 따라서 달라지는 Widget | 1.상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함 |
-|^                                  |  2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
+|상위Widget에 따라서 달라지는 Widget | 1.상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함 |
+|                                  |  2.상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함 |
 
 ### Overflow에 예제
  <pre>
@@ -26,11 +26,12 @@
  -  Expanded + (Text or Container or SizedBox, Row, Column ... ) : 정상
  -  Flexible + (Text or Container or SizedBox, Row, Column ... ) : 정상 </pre>
  
- <pre>
+```dart
  - (Row,Column,Flex) + (Expanded, Flexible) : 정상
  - Row               + (Text or Container or SizedBox ... ) : 오류
  - Column            + (Text or Container or SizedBox ... ) : 오류
- - Flex              + (Text or Container or SizedBox ... ) : 오류 </pre>
+ - Flex              + (Text or Container or SizedBox ... ) : 오류
+ ```
 
 ### Overflow Widget들 찾아 내는 방법
  - 1. Scaffold 하위에 child로 배치 하여, Size를 overflow하도록 설정 한다.

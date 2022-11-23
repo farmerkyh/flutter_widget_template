@@ -30,7 +30,7 @@
  - (Row,Column,Flex) + (Expanded, Flexible) : 정상
  - Row               + (Text or Container or SizedBox ... ) : 오류
  - Column            + (Text or Container or SizedBox ... ) : 오류
- - Flex              + (Text or Container or SizedBox ... ) : 오류 <pre>
+ - Flex              + (Text or Container or SizedBox ... ) : 오류 </pre>
 
 ### Overflow Widget들 찾아 내는 방법
  - 1. Scaffold 하위에 child로 배치 하여, Size를 overflow하도록 설정 한다.

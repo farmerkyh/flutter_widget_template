@@ -1,17 +1,22 @@
 # 1. Overflow
 ### Widget overflow 및 size 특징 분류
- > 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.
- > 두번째, child Widget들의 size가 화면보다 커지면 같이 커지는 Widget들이 있다. overflow발생.
+ > 첫번째, child Widget들의 size가 커지면 scroll이 되거나, 안보이는 Widget들이 있다. overflow발생안함.<br>
+ > 두번째, child Widget들의 size가 화면보다 커지면 같이 커지는 Widget들이 있다. overflow발생.<br>
  > 세번째, 위 두가지는 Widget본인의 성격에 의해 정해진 특징이다.
  >        하지만 본인 성격도 중요하지만 Parent Widget성격에 따라가는 경우도 있다.
  >        즉, parent가 overflow발생할 수 있는 Widget이면 child가 scroll기능이 있어도 overflow가 발생한다.
 
-### Widget종류
-|절대 발생하지 않는 |하위 Widget Size에|상위Widget에 따라서|
-|  Widget          |따라서 결정       |달라지는 Widget    |
-|------------------|-----------------|------------------|
-|Scaffold          |Row, Column      | All (?)                         |
+### Overflow에 따른 Widget 분류 
+|절대 발생하지 않는  Widget |하위 Widget Size에 따라서 결정|상위Widget에 따라서 달라지는 Widget|
+|-------------------------|-----------------------------|---------------------------------|
+| Scaffold                | Row                         | Text, Container, SizedBox ...   |
+| Expanded                | Column                      | 왼쪽 widget들 제외한 모두(?)     |
+| Flexible (미테스트)      |                             |                                 |
 
+ > 절대 발생하지 않는  Widget : Parent, Child에 어떤 Widget들이 와도 overflow발생 안함
+ > 하위 Widget Size에 따라서 결정 : 하위 Widget들의 Size가 화면보다 커질 경우 overflow발생
+ > 상위Widget에 따라서 달라지는 Widget : 상위 Widget이 '절대 발생하지 않는 Widget'들이면 overflow발생 안함
+ >                                   : 상위 Widget이 '하위 Widget Size에 따라서 결정'되는 Widget들이면 overflow발생 함
 
 # 2. Scaffold + Text 예문
  - Scaffold child에는 어떤 Widget이 와도 overflow가 발생하지 않는다.
@@ -28,7 +33,7 @@
   );
 ```
  - 실행결과 : 정상
-<img src="./README_images/associatscaffold_text_100_1on_100_1.png" height="500">
+<img src="./README_images/scaffold_text_100_1.png" height="500">
 
  - Scaffold + Text 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/lib/overflow/scaffold_text_100.dart
@@ -86,9 +91,37 @@
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/README.md
 
 # 4. Scffold + Expanded 예문
- - 오류
+```dart
+  return Scaffold(
+    appBar: AppBar(title: const Text("Expanded + ListView")),
+    body: Expanded(
+      child: Text('10000' * 1000),
+    ),
+  );
+```
+ - 오류 (overflow와 관련없이 Expanded 특성상 오류임)
  - 이유 : Expanded특성 때문
-
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/README.md
 
+# 5. Column + Expanded 예문
+```dart
+  body: Column(
+    children: [
+      Expanded(
+        child: Container(color: Colors.blue, child: Text('첫번째 Expanded--- 100번' * 100)),
+      ),
+      Expanded(child: Text('두번째 Expanded--- 200번' * 200)),
+      Expanded(
+        child: Container(color: Colors.amber, child: Text('세번째 Expanded--- 300번' * 200)),
+      ),
+    ],
+  ),
+```
+
+ - 정상
+ - 이유 : Expanded특성 때문
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/area_widget/README.md
+
+ - 실행결과 : 정상
+<img src="./README_images/column_expanded_100_1.png" height="500">
 

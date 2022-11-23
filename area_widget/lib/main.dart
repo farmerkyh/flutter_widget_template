@@ -4,6 +4,7 @@ import 'package:row_column/column/column_screen_120.dart';
 import 'package:row_column/container/container_screen_100.dart';
 import 'package:row_column/container/container_screen_110.dart';
 import 'package:row_column/expanded/expanded_screen_100.dart';
+import 'package:row_column/overflow/column_expanded_100.dart';
 import 'package:row_column/overflow/column_listview_100.dart';
 import 'package:row_column/overflow/container_listview_100.dart';
 import 'package:row_column/overflow/scaffold_expanded_100.dart';
@@ -109,13 +110,15 @@ class MyGrid extends StatelessWidget {
             createLeftOneMenu(context, "Stack+Positioned(error)", const StackScreen110()),
             createLeftOneMenu(context, "Stack+Positioned(120)", const StackScreen120()),
             createLeftOneMenu(context, "Stack+Positioned(130)", const StackScreen130()),
+            const Divider(height: 5),
 
             //Overflow
-            createLeftOneMenu(context, "Scaffold + Text", const ScaffoldText100()),
-            createLeftOneMenu(context, "Column + ListView", const ColumnListView100()),
+            createLeftOneMenu(context, "Scaffold + Text (ok)", const ScaffoldText100()),
+            createLeftOneMenu(context, "Column + ListView (error)", const ColumnListView100()),
+            createLeftOneMenu(context, "Column + Expanded (ok)", const ColumnExpanded100()),
             createLeftOneMenu(context, "Container + ListView", const ContainerListView100()),
             createLeftOneMenu(context, "SizedBox + ListView", const SizedBoxListView100()),
-            createLeftOneMenu(context, "Expanded", const ScaffoldExpanded100()),
+            createLeftOneMenu(context, "Scaffold + Expanded(error)", const ScaffoldExpanded100()),
           ],
         ),
       ),

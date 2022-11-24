@@ -119,6 +119,9 @@
  - 신규플젝을 만들어서 할 경우에는 다른 오류가 발생한다.
 <img src="./README_images/cupertino_310.png">
 
+ - 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/foundation_package/foundation_100.dart
+
 #### 2. dart:io 사용
 ```dart
     import 'dart:io' show Platform;

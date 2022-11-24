@@ -157,7 +157,11 @@
  - import : `별도 추가 안해 됨`
  - dart script
 ```dart
-    Theme.of(context).platform == TargetPlatform.iOS
+    if (Theme.of(context).platform == TargetPlatform.iOS) {
+    } else if (Theme.of(context).platform == TargetPlatform.android) {
+    } else if (Theme.of(context).platform == TargetPlatform.windows) {
+    } else {
+    }
 
  - iOS : 정상작동
  - android : 정상 작동

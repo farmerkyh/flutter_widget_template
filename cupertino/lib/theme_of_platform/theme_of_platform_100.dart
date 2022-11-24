@@ -40,6 +40,7 @@ class ThemeOfPlatform100 extends StatelessWidget {
   }
 
   void getAndroidAlertDialog(BuildContext context) {
+    //구분 가능 os : android, fuchsia, iOS, linux, macOS, windows
     //---------------------------------------------------------------------------
     // 1. iOS
     //---------------------------------------------------------------------------

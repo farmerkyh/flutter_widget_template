@@ -96,16 +96,21 @@
 |:------------- | -------------:|:-------------:  |
 | left foo <br> left bar <br> left baz   | right foo <br> right bar <br> right baz  | middle bar <br> middle bar  <br>middle bar  |
 
-### 11. Code Block
+# 11. Code Block
+### 11.1 Code Block - 예문/결과
  - <pre><code>{code}</code></pre> 
  - ` `` dart .... ` ``   [문법강조(Syntax highlighting)]
 
+### 11.2 Code Block - 예문/결과
+<pre>
+ - 회색 배경색 주기 : `배경색 주기`
+</pre>
+- 회색 배경색 주기 : `배경색 주기`
 
 
 
 # 99. 기타 예문/결과 
 <pre>
- - 회색 배경색 주기 : `배경색 주기`
  - 취소선은 : ~~취소문구~~
  - 엔터키   
    줄바꿈 : <br>
@@ -120,7 +125,6 @@
            ---------------------------------------
  - 이미지 : <i mg src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck">
 </pre>
- - 회색 배경색 주기 : `배경색 주기`
  - 취소선은 : ~~취소문구~~
  - 엔터키 : <br>
  - 엔터키 두번째   

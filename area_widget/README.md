@@ -23,7 +23,7 @@
 ### 2. SizedBox 사용이유
  - 주로 Widget간에 간격을 주려고 할때 사용 된다.
  - Container보다 아주아주 조금 가볍다.
- - googling 해보면 크게 아래 2가이 의견들이 있다.
+ - googling 해보면 크게 아래 2가지 의견들이 있다.
 ```dart
    . Dart는 Wrapping용 언어라 Container와 같은 성격 Widget을 Wrapping해서 Padding을 적용하는게 좋다.
    . Wrapping을 많이 할 수록 복잡도가 높아 지기때문에 SizedBox를 사용하는게 좋다.
@@ -43,9 +43,9 @@
  - pixel기준으로 할 경우, 핸드폰 규격에 맞추기 어렵지만, expanded를 사용할 경우 핸드폰 규격에 맞추기 쉽다.
 
 ### 3. 사용가능 Widget
- - Flexible Widget or Expanded Widget들은 반드시 Column, Row, Flex(?) Widget안에 사용해야 된다.
+ - Flexible Widget or Expanded Widget들은 반드시 Column, Row, Flex(?) Widget안에만 사용해야 된다.
  > Expanded는 Flexible Widget에서 상속받았다.
- - Scffold, Container, SizedBox  등에 사용 시 오류 발생
+ - Scffold, Container, SizedBox  등에 child로 사용 시 오류 발생
  > 오류 내용 
 ```dart
 The following assertion was thrown while looking for parent data.:
@@ -64,8 +64,8 @@ Usually, this indicates that at least one of the offending ParentDataWidgets lis
  - 주측에서 찾이 할 수 있는 공간은 모두 찾이 한다. (default : MainAxisSize.max)
  - 반대측은 Widget 크기에 따라서 최소한의 크기만 찾이 한다.
  - `중요 : 내부 Widget들의 size가 화면보다 커질 경우 overflow 오류 발생 (★★)`
- > Error : A RenderFlex overflowed by 4526 pixels on the bottom.<br>
- > 4526는 화면을 벗어난 pixel 수<br>
+ > Error : A RenderFlex overflowed by 4526 pixels on the bottom.    
+ > 4526는 화면을 벗어난 pixel 수이다.    
  - 즉, Column의 children Widget들이 화면보다 작으면 화면만큼(남은만큼) 최대한 커지고, 
  -     내부  Widget들이 화면보다 커지면 내부 Widget들의 Size만큼 Column Widget도 커진다.
 

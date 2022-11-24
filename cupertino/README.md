@@ -124,13 +124,6 @@
  - 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/foundation_package/foundation_100.dart
 
- - 아래는 오류 발생????
-<img src="./README_images/cupertino_300.png">
- - import 자체가 되지 않는다.
- - 신규플젝을 만들어서 할 경우에는 다른 오류가 발생한다.
-<img src="./README_images/cupertino_310.png">
-
-
 #### 2. dart:io 사용
  - 구분 가능 os : isAndroid, isFuchsia, isIOS, isLinux, isMacOS, isWindows
 
@@ -154,6 +147,9 @@
    오류내역   : Unsupported operation: Platform._operatingSystem
 ```
 
+ - 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/dart_io/dart_io_100.dart
+
 #### 3. Theme.of(context) 사용
  - 구분 가능 os : android, fuchsia, iOS, linux, macOS, windows
 
@@ -169,9 +165,22 @@
  - 웹브라우져 : 아쉽게도 chrome, ie, Edge을 구분할 수 있는 기준은 없다.    
                실행 시 windows로 인식된다.    
 ```
+ - 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/theme_of_platform/theme_of_platform_100.dart
 
 #### 4. Flatform Widget이용하기
- - 다음 챕터에 내용 존재
+```dart
+ - 구분 가능 os : android
+                 iOS     
+                 windows (android로 인식함)
+                 web browser (오류 발생)
+
+ - yaml : `flutter_platform_widgets: ^2.0.0 `
+ - import : `import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';`
+```
+ - 상세내용 다음 챕터에 내용 존재
+ - web browser에서 실행 시 아래와 같은 오류 발생
+ > WebGL: INVALID_OPERATION: delete: object does not belong to this context
 
 #### 5. OS구분, 객체 변경 예제
 ```dart
@@ -230,7 +239,7 @@
 #### 1. Widget 종류
  - library : flutter_platform_widgets: ^2.0.0 
  - import  : import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
- - url : https://pub.dev/packages/flutter_platform_widgets
+ - Widget 종류 url : https://pub.dev/packages/flutter_platform_widgets
 
  - PlatformWidget
  - PlatformText
@@ -346,3 +355,19 @@
       cupertino: (_, __) => CupertinoIconButtonData(),
   )
 ```
+
+## 10. Error 내역
+ - 참 이상허네.
+ - 어떤때는 아래와 같은 오류가 나고, 어떤때는 오류 발생을 하지 않고
+ - 좀 더 테스트가 필요
+
+ - Error 종류 1
+<img src="./README_images/cupertino_300.png">
+ 
+ - Error 종류 2
+ - import 자체가 되지 않는다.
+ - 신규플젝을 만들어서 할 경우에는 다른 오류가 발생한다.
+<img src="./README_images/cupertino_310.png">
+
+ - Error 종류 3
+ - WebGL: INVALID_OPERATION: delete: object does not belong to this context

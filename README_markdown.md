@@ -99,10 +99,10 @@
 # 11. Code Block
 ### 11.1 Code Block - 예문/결과
 <pre>
- - <pre><code>{개발 소스 code}</code></pre> 
- - ```dart 
+ - < pre>< code>{개발 소스 code}< /code>< /pre> 
+ - ` ``dart 
    개발소스코드 [문법강조(Syntax highlighting)]
-   ```   
+   ` ``   
 </pre>
  - <pre><code>{개발 소스 code}</code></pre> 
 ```dart 

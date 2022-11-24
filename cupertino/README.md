@@ -170,17 +170,28 @@
 
 #### 4. Flatform Widget이용하기
 ```dart
- - 구분 가능 os : android
-                 iOS     
-                 windows (android로 인식함)
-                 web browser (오류 발생)
+ - 구분 가능 os : android     (material)
+                 iOS         (cupertino)
+                 windows     (material)(android로 인식함)
+                 web browser (material)(android로 인식함)
 
  - yaml : `flutter_platform_widgets: ^2.0.0 `
  - import : `import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';`
 ```
+ - dart script
+```dart
+  body: PlatformWidget(
+    material: (_, __) => const Text('material'),
+    cupertino: (context, platform) => const Text('cupertino'),
+  ),
+```
+
  - 상세내용 다음 챕터에 내용 존재
  - web browser에서 실행 시 아래와 같은 오류 발생
  > WebGL: INVALID_OPERATION: delete: object does not belong to this context
+
+ - 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/platform_widgets/platform_widgets_100.dart
 
 #### 5. OS구분, 객체 변경 예제
 ```dart

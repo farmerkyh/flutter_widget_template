@@ -1,7 +1,9 @@
 /*
   - Flutter : ver-3.3.7
 */
+import 'package:cupertino/dart_io/dart_io_100.dart';
 import 'package:cupertino/foundation_package/foundation_100.dart';
+import 'package:cupertino/theme_of_platform/theme_of_platform_100.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -66,7 +68,9 @@ class MyGrid extends StatelessWidget {
                       BorderRadius.only(bottomLeft: Radius.circular(40.0), bottomRight: Radius.circular(40.0))),
             ),
             //Foundation
-            createLeftOneMenu(context, "Foundation(100)", FoundationScreen100()),
+            createLeftOneMenu(context, "foundation-defaultTargetPlatform", const FoundationScreen100()),
+            createLeftOneMenu(context, "dart:io", const DartIoScreen100()),
+            createLeftOneMenu(context, "Theme.of(context).platform", const ThemeOfPlatform100()),
 
             const Divider(height: 50),
           ],

@@ -96,10 +96,11 @@
 
 ## 8. OS 구분 방법 - 네가지
 #### 1. foundation.dart 사용
- - yaml
- > 별도 추가 안해 됨
- - import
- > import 'package:flutter/foundation.dart';
+ - 구분가능 os : TargetPlatform.enum : android, fuchsia,iOS,linux,macOS,windows
+ - 참고 : os를 구분하는 api이고, browser를 구분하는 api는 아니기 때문이다.   
+
+ - yaml : `별도 추가 안해 됨`
+ - import : `import 'package:flutter/foundation.dart';`
  - dart script
 ```dart
     //TargetPlatform.enum : android, fuchsia,iOS,linux,macOS,windows,
@@ -110,13 +111,15 @@
     } else if (defaultTargetPlatform == TargetPlatform.windows) {
       //windows
     }
-    
-```
- - 아쉽게도 chrome, ie, Edge을 구분할 수 있는 기준은 없다.
- - os를 구분하는 api이고, browser를 구분하는 api는 아니기 때문이다.
- - chrome으로 실행 시 'windows'로 분류 된다.
+
+ - iOS : 정상작동
+ - android : 정상 작동
+ - Windows : 정상 작동
+ - 웹브라우져 : 아쉽게도 chrome, ie, Edge을 구분할 수 있는 기준은 없다.    
+               실행 시 TargetPlatform.windows로 인식된다.
  - defaultTargetPlatform : 별도로 추가선언 및 생성을 안해도   
    'package:flutter/foundation.dart' 를 import하기만 해도 사용가능하다.
+```
 
  - 참고소스
  > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/foundation_package/foundation_100.dart
@@ -129,9 +132,12 @@
 
 
 #### 2. dart:io 사용
-```dart
-    import 'dart:io' show Platform;
+ - 구분 가능 os : isAndroid, isFuchsia, isIOS, isLinux, isMacOS, isWindows
 
+ - yaml : `별도 추가 안해 됨`
+ - import : `import 'dart:io' show Platform;`
+ - dart script
+```dart
     //os 구분 : isAndroid, isFuchsia, isIOS, isLinux, isMacOS, isWindows
     if (Platform.isAndroid) {
       //iOS
@@ -140,15 +146,28 @@
     } else if (Platform.isWindows) {
       //Windows
     }
+
+ - iOS : 정상작동
+ - android : 정상 작동
+ - Windows : 정상 작동
+ - 웹브라우져 : 오류 발생
+   오류내역   : Unsupported operation: Platform._operatingSystem
 ```
 
 #### 3. Theme.of(context) 사용
-```dart
-    import없이 바로 사용가능
+ - 구분 가능 os : android, fuchsia, iOS, linux, macOS, windows
 
+ - yaml : `별도 추가 안해 됨`
+ - import : `별도 추가 안해 됨`
+ - dart script
+```dart
     Theme.of(context).platform == TargetPlatform.iOS
 
-    예제 소스는 아래에
+ - iOS : 정상작동
+ - android : 정상 작동
+ - Windows : 정상 작동
+ - 웹브라우져 : 아쉽게도 chrome, ie, Edge을 구분할 수 있는 기준은 없다.    
+               실행 시 windows로 인식된다.    
 ```
 
 #### 4. Flatform Widget이용하기

@@ -15,14 +15,17 @@ class FoundationScreen100 extends StatelessWidget {
       appBar: AppBar(title: const Text('Foundation')),
       body: Column(
         children: [
-          const Text('Android style-TimePickerSpinner'),
-          const Expanded(
-            child: getTimePickerSpinner(),
-          ),
-          const Text('iOS style-CupertinoPicker'),
-          Expanded(
-            child: getCupertinoPicker(),
-          ),
+          Container(color: Colors.amber, child: const Text('Android style-TimePickerSpinner')),
+          //---------------------------------------------------------------------------
+          // 1. foundation - defaultTargetPlatform 문법을 이용한 os 구분해서 개발
+          //---------------------------------------------------------------------------
+          const Expanded(child: getTimePickerSpinner()),
+          Container(color: Colors.amber, child: const Text('iOS style-CupertinoPicker')),
+
+          //---------------------------------------------------------------------------
+          // 2. iOS 용 CupertinoPicker
+          //---------------------------------------------------------------------------
+          Expanded(child: getCupertinoPicker()),
         ],
       ),
     );
@@ -42,7 +45,7 @@ class getTimePickerSpinner extends StatelessWidget {
     // 1. iOS
     //---------------------------------------------------------------------------
     if (defaultTargetPlatform == TargetPlatform.iOS) {
-      return const Text('난 iOS야.. 테스트를 할 수 없어.');
+      const Text('난 iOS야.. 테스트를 할 수 없어.');
 
       //---------------------------------------------------------------------------
       // 2. Android

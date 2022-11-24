@@ -96,9 +96,12 @@
 
 ## 8. OS 구분 방법 - 네가지
 #### 1. foundation.dart 사용
+ - yaml
+ > 별도 추가 안해 됨
+ - import
+ > import 'package:flutter/foundation.dart';
+ - dart script
 ```dart
-    import 'package:flutter/foundation.dart';
-
     //TargetPlatform.enum : android, fuchsia,iOS,linux,macOS,windows,
     if (defaultTargetPlatform == TargetPlatform.iOS) {
       //iOS
@@ -112,6 +115,11 @@
  - 아쉽게도 chrome, ie, Edge을 구분할 수 있는 기준은 없다.
  - os를 구분하는 api이고, browser를 구분하는 api는 아니기 때문이다.
  - chrome으로 실행 시 'windows'로 분류 된다.
+ - defaultTargetPlatform : 별도로 추가선언 및 생성을 안해도   
+   'package:flutter/foundation.dart' 를 import하기만 해도 사용가능하다.
+
+ - 참고소스
+ > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/foundation_package/foundation_100.dart
 
  - 아래는 오류 발생????
 <img src="./README_images/cupertino_300.png">
@@ -119,8 +127,6 @@
  - 신규플젝을 만들어서 할 경우에는 다른 오류가 발생한다.
 <img src="./README_images/cupertino_310.png">
 
- - 참고소스
- > https://github.com/farmerkyh/flutter_widget_template/blob/master/cupertino/lib/foundation_package/foundation_100.dart
 
 #### 2. dart:io 사용
 ```dart

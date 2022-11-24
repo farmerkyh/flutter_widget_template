@@ -1,7 +1,7 @@
 // ignore_for_file: camel_case_types
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart'; //CupertinoPicker widget용
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart'; //defaultTargetPlatform 이라는 변수사용용
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 
 void main() => runApp(const MaterialApp(home: FoundationScreen100()));

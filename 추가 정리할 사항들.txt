@@ -1,0 +1,23 @@
+1. 추가 정리할 widget들
+
+area 프로젝트에 
+  IntrinsicHeight
+  Wrap
+  
+2. dialog
+   showModalBottomSheet
+        //  - default heigh은 화면에 반만큼만 찾이 한다.
+        //  - isScrollControlled : 속성을 추가 하여 전체 화면까지 scroll될 수 있도록 한다.
+        //Bottom영역에서 빈 공간을 click하면 close되도록 한다.
+        FocusScope.of(context).requestFocus(FocusNode());
+	
+3. 설명이 존재 하는 플젝들	
+drift (database, table, sql)
+  - \flutter_module\calendar_schedule : 프로젝트에 설명 잘 되어 있음
+TextFormField
+  - \flutter_module\calendar_schedule : 프로젝트에 설명 잘 되어 있음
+  
+  
+4. 사용해본 library
+  - get_it: ^7.2.0 : Dependecy injection역할을 수행하도록 해준다.
+                     \flutter_module\calendar_schedule : 프로젝트에서 사용했음

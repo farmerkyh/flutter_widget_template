@@ -1,5 +1,18 @@
 > . 이 문서는 다른 블로그에서 다루는 내용은 기술하지 않았다.<br>
 > . 문서를 만든 목적은 Scroll View의 종류와 개발도중 어떤 Widget을 선택할지에 대한 고민을 줄이고자 하기 위함이다.
+# 0. CustomScrollView
+  - 여러게 scrollView와 일반 Widget들을 한번에 관리 하여 scroll되게 해준다.
+  - 교육 : https://www.inflearn.com/ -> [코드팩토리] [초급] Flutter 3.0 앱 개발 - 10개의 프로젝트로 오늘 초보 탈출! -> 섹션 20. [이론] Scrollable Widgets
+
+# 0. Scrollbar
+  - Scrollbar안에 Listview, GridView를 child로 위치시키면
+    오른쪽에 ScrollBar가 보여진다.
+  - Scroll이 어느 위치에 존재 하는 지 알 수 있는 Widget이다.
+  - 교육 : https://www.inflearn.com/ -> [코드팩토리] [초급] Flutter 3.0 앱 개발 - 10개의 프로젝트로 오늘 초보 탈출! -> 섹션 20. [이론] Scrollable Widgets
+  
+  # 0. RefreshIndicator
+   - ScrollView에서 맨위일 일때 위쪽으로 scroll하겠다고 하면 재조회 하는 경우에 처리
+   - onRefresh: 속성으로 서버에서 자료를 재 조회 한다.
 
 # 1. Scroll View 종류
   - ListView

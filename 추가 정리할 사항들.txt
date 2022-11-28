@@ -1,8 +1,9 @@
 1. 추가 정리할 widget들
-
-area 프로젝트에 
-  IntrinsicHeight
-  Wrap
+   - list view
+     ReorderableListView : 사용자가 레코드간에 변경 가능
+   - area 프로젝트에 
+      IntrinsicHeight
+      Wrap
   
 2. dialog
    showModalBottomSheet
@@ -21,3 +22,4 @@ TextFormField
 4. 사용해본 library
   - get_it: ^7.2.0 : Dependecy injection역할을 수행하도록 해준다.
                      \flutter_module\calendar_schedule : 프로젝트에서 사용했음
+

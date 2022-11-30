@@ -6,10 +6,6 @@
  - Stack, Queue 구조
 <img src="./README_images/stack_queue_1.png">
 
-1. pushReplacementNamed() : 스택메모리에있는 화면을 교체한다.   
-
-
-
 # 2. Navigator Step 100
  - Navigator : push, pop 기본
  - [ [소스](./lib/navigator_step100/navigator_step100.dart) ]
@@ -122,12 +118,78 @@
  7. Navigator.of(context).popAndPushNamed(routeName)    
 
 ### 1. Navigator.of(context).push(route)  
+ - 위쪽에서 설명
 ### 2. Navigator.of(context).pushNamed(routeName) 
+ - 위쪽에서 설명
 ### 3. Navigator.of(context).pushAndRemoveUntil(newRoute, (route) => false)  
+ - 일반 Route 방식
+```dart
+   ElevatedButton(
+      onPressed: () {
+         Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (_) => const RouteThreeScreen()),
+            (route) => route.settings.name == '/'
+            //(route) => false or true
+         );
+      },
+      child: const Text('페이지 이동 (push And Remove Until)')),
+```
+ 1. (route) => false
+    - 다음화면으로 같을 경우 Appbar에 뒤로가기 버튼이 없다.
+    - 이유는 뒤로가는 route가 다 지워졌기 때문이다. (stack에서 삭제)
+    - 그래서 RouteThreeScreen()화면에서 pop을 하면 검은화면이 뜬다.
+ 2. (route) => true
+    - 모든 route가 다 살아있고(stack 유지), 다음화면으로이동 한다.
+ 3. (route) => route.settings.name == '/'
+    - 모든 routes 정보(stack목록)를 for문과 같은 방식으로 순환한다.
+    - 조건절의 결과가 true이면 route정보를 살리고
+    - 조건절의 결과가 fals이면 route정보를 삭제한다.
+    - '/'(Route Home 화면)만 살아 있고, 다른 route정보는 삭제 된다.
+    - RouteThreeScreen()이동 후     
+      pop을 하면 Route Home Screen화면으로 이동 된다.
+
+ - 추가 예문
+ - 테스트 필요 ???
+```dart
+   Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (BuildContext context) =>HomePage()),
+      (route) => false
+   );
+```
+ - stack에서 route정보를 삭제하고 HomePage()화면으로 이동하면서 HomePage()는 stack에 넣는다.
+
 ### 4. Navigator.of(context).pushNamedAndRemoveUntil(newRouteName, (route) => false) 
+ - Named Route(명명된 라우트, 이름 지정 라우트) 방식일 경우
+ - pushAndRemoveUntil 과 방식만 다르지 작동방법은 모두 동일하다.
+ - 테스트 필요 ???
+```dart
+  Navigator.of(context).pushNamedAndRemoveUntil(context, '/', (route) => false);
+```
+
 ### 5. Navigator.of(context).pushReplacement(newRoute)   
+ - 일반 Route 방식
+ - 테스트 필요 ???
+```dart
+ Navigator.of(context).pushReplacement(
+   MaterialPageRoute(builder: (_) => const ToDoList()));
+```
+ - 현재 페이지를 stack에서 Pop하고, ToDoList() 화면으로 이동하고, stack에 push한다.
+
 ### 6. Navigator.of(context).pushReplacementNamed(routeName)
+ - Named Route(명명된 라우트, 이름 지정 라우트) 방식일 경우
+ - pushReplacement 과 방식만 다르지 작동방법은 모두 동일하다.
+ - 테스트 필요 ???
+```dart
+ Navigator.of(context).pushReplacementNamed('/screen2');
+```
+
 ### 7. Navigator.of(context).popAndPushNamed(routeName)
+ - pushReplacementNamed와 popAndPushNamed의 결과는 동일하다.
+ - 다른점
+   . 페이지 전환 과정이 조금 다르다.
+   . popAndPushNamed 메서드는 stack에서 pop하고, 지정한 화면을 push 한다.
+   . pushRelacementNamed 메서드는 현재 페이지와 stack의 맨 위의 페이지가 대체 된다.
+   . 눈으로 확인 방법은 : slow motion 을 켜두고 확인하면 페이지 변경(전환)시 애니메이션 차이가 보인다.
 
 # 6. Navigator Pop
  - [ [소스](./lib/pop_100/PopScreen100.dart) ]

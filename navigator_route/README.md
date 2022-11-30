@@ -29,7 +29,7 @@
 <img src="./README_images/navigator_step100_1.png">
 
 # 2. Navigator Step 110
- - Navigator : Routes, pushNamed, pop 기본  [소스](./lib/navigator_step100/navigator_step110_routes.dart)
+ - Navigator : Routes, pushNamed, pop 기본  [ [소스](./lib/navigator_step100/navigator_step110_routes.dart) ]
 <img src="./README_images/navigator_step110_routes_1.png">
 
 ```dart
@@ -41,7 +41,7 @@
 ```
 # 3. Navigator Step 200
  - Navigator : Arguments 전달, Arguments 받기, Return값 넘기기, Return값 받기    
- - [소스](./lib/navigator_step100/navigator_step200_arguments.dart)
+ - [ [소스](./lib/navigator_step100/navigator_step200_arguments.dart) ]
 ### 1. Arguments 전달 - 방법 1
 ```dart
    onTap: () async {
@@ -61,11 +61,15 @@
 ```
 
 ### 3. Return값 넘기기
+ - pop method definition : `void pop<T extends Object?>([ T? result ])`    
+   - generic type으로 정의 되어 있기 때문에 어떤 type이건 다 가능하다.  
+   - Return받을 때는 반드시 형변환을 해야 된다.
 ```dart
    Navigator.of(context).pop('YES');
 ```
 
 ### 3. Return값 받기
+```dart
    onTap: () async {
       Map<String, String> todoOne = {'subject':'Fltter 공부하기', 'flag':'NO'};
       var rtnValue = await Navigator.of(context).pushNamed('/todoPage', arguments: todoOne);

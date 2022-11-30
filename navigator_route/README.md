@@ -25,7 +25,7 @@
 
 
 # 1. Navigator Step 100
- - Navigator : push, pop 기본  [소스](./lib/navigator_step100/navigator_step100.dart)
+ - Navigator : push, pop 기본 [ [소스](./lib/navigator_step100/navigator_step100.dart) ]
 <img src="./README_images/navigator_step100_1.png">
 
 # 2. Navigator Step 110

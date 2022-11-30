@@ -19,10 +19,7 @@ class RouteScreen100 extends StatelessWidget {
             onPressed: () async {
               // parameter값을 이용하여 argument전달
               final result = Navigator.of(context).push(
-                MaterialPageRoute(
-                    builder: (BuildContext context) => const RouteOneScreen(
-                          argument: 123,
-                        )),
+                MaterialPageRoute(builder: (BuildContext context) => const RouteOneScreen(argument: 123)),
               );
               debugPrint("Route..route_one_screen Result=${result}");
               //debugPrint(result);

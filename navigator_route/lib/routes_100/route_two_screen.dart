@@ -48,13 +48,15 @@ class RouteTwoScreen extends StatelessWidget {
         //(route) => true
         //  - 모든 route가 다 살아있다.
         //route.settings.name == '/'
-        //  - 조건절의 결과가 truee이면 route정보를 살리고
-        //  - 조건절의 결과가 false이면 route정보를 삭제한다.
-        //  - 그래서, '/'(Route Home Screen화면)만 살아 있고, 다른 route정보는 삭제 된다.
+        //  - 조건절의 결과가 true이면 route정보를 살리고
+        //  - 조건절의 결과가 fals이면 route정보를 삭제한다.
+        //  - 삭제 시, '/'(Route Home Screen화면)만 살아 있고, 다른 route정보는 삭제 된다.
         //  - RouteThreeScreen()화면에서 pop을 하면 Route Home Screen화면으로 바로 이동 된다.
         //수행과정
         //  - 버튼이 눌리고 -> Route정보를 유지할지, 삭제할지 처리 하기 위해서
-        //   "(route)=> .." 이 문장을 반복 수행 한다.
+        //   "(route) => route.settings.name == '/'" 이 문장을 반복 수행 한다.
+        //   반복수행이란 현재페이지에서 route 중 '/'까지 stack에서 pop하면서 수행 된다.
+        //   '/'을 만나게 되면 stop하면 해당 route 화면이 보여진다.
         //   -> Routes정보가 삭제 또는 유지가 완료 된 후 -> 다음 화면으로 push한다.
         //   -> 다음화면으로 마지막에 stack에 push하기 때문에 삭제 되지 않고 유지 된다.
         ElevatedButton(

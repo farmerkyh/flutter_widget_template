@@ -111,8 +111,27 @@
    },
 
 ```
+# 5. Navigator Push
+ - dart소스는 없고 아래 설명만 존재
+ - route_two_screen.dart 소스보고 추가 개발 및 수정 필요
+ - Push종류
+ 1. Navigator.of(context).push(route)    
+ 2. Navigator.of(context).pushNamed(routeName)    
+ 3. Navigator.of(context).pushAndRemoveUntil(newRoute, (route) => false)    
+ 4. Navigator.of(context).pushNamedAndRemoveUntil(newRouteName, (route) => false)    
+ 5. Navigator.of(context).pushReplacement(newRoute)    
+ 6. Navigator.of(context).pushReplacementNamed(routeName)    
+ 7. Navigator.of(context).popAndPushNamed(routeName)    
 
-# 5. Navigator Pop
+### 1. Navigator.of(context).push(route)  
+### 2. Navigator.of(context).pushNamed(routeName) 
+### 3. Navigator.of(context).pushAndRemoveUntil(newRoute, (route) => false)  
+### 4. Navigator.of(context).pushNamedAndRemoveUntil(newRouteName, (route) => false) 
+### 5. Navigator.of(context).pushReplacement(newRoute)   
+### 6. Navigator.of(context).pushReplacementNamed(routeName)
+### 7. Navigator.of(context).popAndPushNamed(routeName)
+
+# 6. Navigator Pop
  - [ [소스](./lib/pop_100/PopScreen100.dart) ]
 
 ### 1. Pop 정의
@@ -134,6 +153,12 @@
  1. 현재 Pop가능한 상태인 경우에만 pop이 실행됨
  2. stack에 페이지가 한개(현재 페이지)만 존재 하는 경우에는 pop()을 수행하지 않는다.
  3. 이전 페이지가 존재 하는 경우에만 pop()을 수행한다.
+```dart
+   ElevatedButton(
+      onPressed: () { Navigator.of(context).maybePop(); },
+      child: const Text('뒤로가기'),
+   ),
+```
 
 ### 5. Navigator.of(context).canPop();
  - 정의
@@ -141,13 +166,17 @@
  2. return값은 true/false이다.    
  3. true: stack에 페이지가 2개(현재 페이지 + 이전페이지)가 존재 하면 true를 return한다.    
  4. false : stack에 페이지가 1개(현재 페이지)만 존재 하면 false를 return한다.    
+ 5. 예문 : 아래 [ WillPopScope Widget ] 챕터에서 설명 및 예문 존재   
 
 ### 6. WillPopScope Widget
  - 정의
- 1. 특정한 화면에서 일정시간 유지해야 하는 경우에 사용된다.    
-    . pop()을 수행 시 아래와 같이 동작한다.   
+ 1. Scaffold를 WillPopScope Widget을 Wrap한 후 onWillPop: 속성에 업무로직을 구현한다.
+ 2. onWillPop: 속성   
+    . 특정한 화면에서 일정시간 유지해야 하는 경우에 사용된다.    
+    . onWillPop: 속성 값에 따라서 pop()을 수행 시 아래와 같이 동작한다.   
       - onWillPop: 속성에 -> false를 return하면 stack에서 pop()하지 못한다. (안한다?)
       - onWillPop: 속성에 -> true를 return하면 stack에서 pop()을 수행한다.
+
 ```dart
   ...
   .. 타이머 로직 구현
@@ -165,7 +194,7 @@
   }
 ```
 
- 2. Home 화면(첫화면)에서    
+ 3. Home 화면(첫화면)에서    
     사용자가 폰 하단bar의 뒤로가기 버튼을 눌렀을때 이동하지 않고 현재화면에 유지시키고 싶을 경우에 사용된다.    
 ```dart
   Widget build(BuildContext context) {

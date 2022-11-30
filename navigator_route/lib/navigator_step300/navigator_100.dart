@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/layout/main_layout.dart';
-import 'package:navigation/navigator_300/navigator_one_screen.dart';
+import 'package:navigation/navigator_step300/navigator_one_screen.dart';
 
 class NavigationScreen100 extends StatelessWidget {
   const NavigationScreen100({super.key});

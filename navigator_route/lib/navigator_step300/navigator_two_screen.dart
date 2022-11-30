@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/layout/main_layout.dart';
-import 'package:navigation/navigator_300/navigator_three_screen.dart';
+import 'package:navigation/navigator_step300/navigator_three_screen.dart';
 
 class NavigationTwoScreen100 extends StatelessWidget {
   const NavigationTwoScreen100({super.key});
@@ -38,7 +38,8 @@ class NavigationTwoScreen100 extends StatelessWidget {
         //pushReplacement 를 활용한 화면 호출
         ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const NavigationThreeScreen()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (_) => const NavigationThreeScreen()));
             },
             child: const Text('pushReplacement')),
       ],

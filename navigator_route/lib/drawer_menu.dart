@@ -16,8 +16,12 @@ class ScreenModel {
 }
 
 final screens = [
-  ScreenModel(builder: (_) => NavigatorStep100(), name: 'Navigator-Step100(base)'),
-  ScreenModel(builder: (_) => NavigatorStep110Routes(), name: 'Navigator-Step110(routes)'),
-  ScreenModel(builder: (_) => NavigatorStep200(), name: 'Navigator-Step200(arguments)'),
+  ScreenModel(
+      builder: (_) => NavigatorStep100(), name: 'Navigator-Step100(base)'),
+  ScreenModel(
+      builder: (_) => NavigatorStep110Routes(),
+      name: 'Navigator-Step110(routes)'),
+  ScreenModel(
+      builder: (_) => NavigatorStep200(), name: 'Navigator-Step200(arguments)'),
   ScreenModel(builder: (_) => PopScreen100(), name: 'Pop'),
 ];

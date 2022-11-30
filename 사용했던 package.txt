@@ -1,2 +1,5 @@
-  table_calendar: ^3.0.8 #달력
-  intl: ^0.17.0  #다국어 사용용
+hive : database - nosql 사용용
+table_calendar: ^3.0.8 #달력
+intl: ^0.17.0  #다국어 사용용
+
+dio : http요청 package

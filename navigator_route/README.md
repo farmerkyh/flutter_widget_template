@@ -25,23 +25,23 @@
 
 
 # 1. Navigator Step 100
- - Navigator : push, pop 기본  [소스](./navigator_step100/navigator_step100.dart)
+ - Navigator : push, pop 기본  [소스](./lib/navigator_step100/navigator_step100.dart)
 <img src="./README_images/navigator_step100_1.png">
 
 # 2. Navigator Step 110
- - Navigator : Routes, pushNamed, pop 기본  [소스](./navigator_step100/navigator_step110_routes.dart)
+ - Navigator : Routes, pushNamed, pop 기본  [소스](./lib/navigator_step100/navigator_step110_routes.dart)
 <img src="./README_images/navigator_step110_routes_1.png">
 
 ```dart
  - 특징
-   . routes기능사용은 MaterialApp Widget안에 정의 되어야 한다.
+   . routes기능사용은 MaterialApp Widget내부에서만 정의 되어야 한다.
    . home 속성 대신 initialRoute 속성을 기술한다.
    . initialRoute : MateriaApp Widget생성 시 default로 보여줄 page를 기술한다. (home:속성 이라고 봐도 된다.)
    . home속성과 initialRoute 속성 2개 동시에 사용시 error발생
 ```
 # 3. Navigator Step 200
  - Navigator : Arguments 전달, Arguments 받기, Return값 넘기기, Return값 받기    
- - [소스](./navigator_step100/navigator_step200_arguments.dart)
+ - [소스](./lib/navigator_step100/navigator_step200_arguments.dart)
 ### 1. Arguments 전달 - 방법 1
 ```dart
    onTap: () async {

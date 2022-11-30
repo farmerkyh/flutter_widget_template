@@ -15,6 +15,7 @@ class PopScreen100 extends StatefulWidget {
 }
 
 class _PopScreen100State extends State<PopScreen100> {
+  bool? canPopFlag;
   @override
   Widget build(BuildContext context) {
     //---------------------------------------------------------------------------------
@@ -42,35 +43,138 @@ class _PopScreen100State extends State<PopScreen100> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch, //Widget은 최대한 넓혀준다.
             children: [
+              //---------------------------------------------------------------------------------
+              const Text('  1. canPop : 현재 Pop가능 상태인지 여부를 return'),
+              //---------------------------------------------------------------------------------
               ElevatedButton(
                 onPressed: () {
-                  //Navigator.of(context).canPop()
-                  //   - 현재 화면에서 Pop을 할 수 있는 상태인지? 없는 상태인지 여부를 return
                   var canPop = Navigator.of(context).canPop();
-                  debugPrint("ElevatedButton canPop flag = $canPop");
+                  setState(() {
+                    canPopFlag = canPop;
+                  });
                 },
-                child: const Text('canPop'),
+                child: const Text('Navigator.of(context).canPop()'),
               ),
+              Center(child: Text('현재 Pop가능 상태 = $canPopFlag')),
               const SizedBox(height: 30),
+
+              //---------------------------------------------------------------------------------
+              const Text('  2. maybePop : 현재 Pop가능한 상태인 경우에만 pop이 실행됨'),
+              //---------------------------------------------------------------------------------
               ElevatedButton(
                 onPressed: () {
                   //Navigator.of(context).maybePop(123)
                   //   - 뒤로갈 수 있는 페이지가 없을 경우 이동하지 않는다.
-                  Navigator.of(context).maybePop(123);
+                  Navigator.of(context).maybePop();
                 },
-                child: const Text('maybePop'),
+                child: const Text('Navigator.of(context).maybePop()'),
               ),
               const SizedBox(height: 30),
+
+              //---------------------------------------------------------------------------------
+              const Text('  3. pop : pop가능 상태와 관계없이 수행'),
+              //---------------------------------------------------------------------------------
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop(123);
+                  Navigator.of(context).pop();
                 },
-                child: const Text('Pop'),
+                child: const Text('Navigator.of(context).pop()'),
+              ),
+              const SizedBox(height: 30),
+
+              //---------------------------------------------------------------------------------
+              const Center(child: Text('  push ')),
+              //---------------------------------------------------------------------------------
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => FirstPage()));
+                },
+                child: const Text('다음페이지 이동'),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+//-----------------------------------------------------------------------
+// 1. First Page
+//-----------------------------------------------------------------------
+class FirstPage extends StatefulWidget {
+  const FirstPage({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _FirstPage();
+}
+
+class _FirstPage extends State<FirstPage> {
+  bool? canPopFlag;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('이전Page존재')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            //---------------------------------------------------------------------------------
+            const Text('  1. canPop : 현재 Pop가능 상태인지 여부를 return'),
+            //---------------------------------------------------------------------------------
+            ElevatedButton(
+              onPressed: () {
+                var canPop = Navigator.of(context).canPop();
+                setState(() {
+                  canPopFlag = canPop;
+                });
+              },
+              child: const Text('Navigator.of(context).canPop()'),
+            ),
+            Center(child: Text('현재 Pop가능 상태 = $canPopFlag')),
+            const SizedBox(height: 30),
+
+            //---------------------------------------------------------------------------------
+            const Text('  2. maybePop : 현재 Pop가능한 상태인 경우에만 pop이 실행됨'),
+            //---------------------------------------------------------------------------------
+            ElevatedButton(
+              onPressed: () {
+                //Navigator.of(context).maybePop(123)
+                //   - 뒤로갈 수 있는 페이지가 없을 경우 이동하지 않는다.
+                Navigator.of(context).maybePop();
+              },
+              child: const Text('Navigator.of(context).maybePop()'),
+            ),
+            const SizedBox(height: 30),
+
+            SizedBox(height: 30.0),
+            _BackButton(name: '<- Home Page로 돌아가기'),
+            SizedBox(height: 30.0),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//-----------------------------------------------------------------------
+// 10. 뒤로가기 버튼
+//-----------------------------------------------------------------------
+class _BackButton extends StatelessWidget {
+  final String name;
+  const _BackButton({required this.name, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+      onPressed: () {
+        Navigator.of(context).pop(); // 현재 route를 스택에서 제거함
+      },
+      child: Text(name),
     );
   }
 }

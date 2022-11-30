@@ -111,3 +111,74 @@
    },
 
 ```
+
+# 5. Navigator Pop
+ - [ [소스](./lib/pop_100/PopScreen100.dart) ]
+
+### 1. Pop 정의
+ 1. syntax : `Navigator.of(context).pop('YES');`   
+ 2. pop() method에 argument를 넣어 이전 페이지(화면)에 전달 할 수 있다.
+ 3. 현재 페이지(화면)를 stack에서 꺼내고, 이전 페이지(화면)로 이동한다.   
+
+### 2. Pop의 종류
+ 1. `Navigator.of(context).pop();`   
+ 2. `Navigator.of(context).maybePop();`   
+ 3. `Navigator.of(context).canPop();`   
+
+### 3. Navigator.of(context).pop();
+ 1. pop() method에 argument를 넣어 이전 페이지(화면)에 전달 할 수 있다.
+ 2. 현재 페이지(화면)를 stack에서 꺼내고, 이전 페이지(화면)로 이동한다.   
+ 3. 만약, 이전 페이지가 존재 하지 않는다면 앱은 검은색 화면이 보여진다.   
+
+### 4. Navigator.of(context).maybePop();
+ 1. 현재 Pop가능한 상태인 경우에만 pop이 실행됨
+ 2. stack에 페이지가 한개(현재 페이지)만 존재 하는 경우에는 pop()을 수행하지 않는다.
+ 3. 이전 페이지가 존재 하는 경우에만 pop()을 수행한다.
+
+### 5. Navigator.of(context).canPop();
+ - 정의
+ 1. 현재 Pop가능 상태인지 여부를 return한다.    
+ 2. return값은 true/false이다.    
+ 3. true: stack에 페이지가 2개(현재 페이지 + 이전페이지)가 존재 하면 true를 return한다.    
+ 4. false : stack에 페이지가 1개(현재 페이지)만 존재 하면 false를 return한다.    
+
+### 6. WillPopScope Widget
+ - 정의
+ 1. 특정한 화면에서 일정시간 유지해야 하는 경우에 사용된다.    
+    . pop()을 수행 시 아래와 같이 동작한다.   
+      - onWillPop: 속성에 -> false를 return하면 stack에서 pop()하지 못한다. (안한다?)
+      - onWillPop: 속성에 -> true를 return하면 stack에서 pop()을 수행한다.
+```dart
+  ...
+  .. 타이머 로직 구현
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        if (타이머 시간 < 10초) {
+         return false;
+        } else {
+         return true;
+        }
+      },
+      child: Scaffold(...),
+   )
+  }
+```
+
+ 2. Home 화면(첫화면)에서    
+    사용자가 폰 하단bar의 뒤로가기 버튼을 눌렀을때 이동하지 않고 현재화면에 유지시키고 싶을 경우에 사용된다.    
+```dart
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        var canPop = Navigator.of(context).canPop();
+        return canPop;
+      },
+      child: Scaffold(...),
+   )
+  }
+```
+
+
+
+

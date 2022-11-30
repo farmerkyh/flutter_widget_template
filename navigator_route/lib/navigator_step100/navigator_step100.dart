@@ -40,9 +40,9 @@ class NavigatorStep100 extends StatelessWidget {
           children: const [
             Text('난 Home Page (Navigator step100)'),
             SizedBox(height: 30.0),
-            BackButton(name: '<- 초기 화면으로 돌아가기'),
+            _BackButton(name: '<- 초기 화면으로 돌아가기'),
             SizedBox(height: 30.0),
-            MoveButton(name: 'First Page로 이동 ->', page: FirstPage())
+            _MoveButton(name: 'First Page로 이동 ->', page: FirstPage())
           ],
         ),
       ),
@@ -71,9 +71,9 @@ class _FirstPage extends State<FirstPage> {
           children: const [
             Text('난 First Page'),
             SizedBox(height: 30.0),
-            BackButton(name: '<- Home Page로 돌아가기'),
+            _BackButton(name: '<- Home Page로 돌아가기'),
             SizedBox(height: 30.0),
-            MoveButton(name: 'Second Page로 이동 ->', page: SecondPage())
+            _MoveButton(name: 'Second Page로 이동 ->', page: SecondPage())
           ],
         ),
       ),
@@ -94,7 +94,7 @@ class SecondPage extends StatelessWidget {
         title: const Text('Second Page'),
       ),
       body: Container(
-        child: const Center(child: BackButton(name: '<- First page로 돌아가기')),
+        child: const Center(child: _BackButton(name: '<- First page로 돌아가기')),
       ),
     );
   }
@@ -103,9 +103,9 @@ class SecondPage extends StatelessWidget {
 //-----------------------------------------------------------------------
 // 10. 뒤로가기 버튼
 //-----------------------------------------------------------------------
-class BackButton extends StatelessWidget {
+class _BackButton extends StatelessWidget {
   final String name;
-  const BackButton({required this.name, super.key});
+  const _BackButton({required this.name, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -121,17 +121,18 @@ class BackButton extends StatelessWidget {
 //-----------------------------------------------------------------------
 // 11. 다음페이지로 이동 버튼
 //-----------------------------------------------------------------------
-class MoveButton extends StatelessWidget {
+class _MoveButton extends StatelessWidget {
   final String name;
   final dynamic page;
-  const MoveButton({required this.name, required this.page, super.key});
+  const _MoveButton({required this.name, required this.page, super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         //Navigator.of(context).push(MaterialPageRoute(builder: (context) => NavigatorStep100()));
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => page));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => page));
       },
       child: Text(name),
     );

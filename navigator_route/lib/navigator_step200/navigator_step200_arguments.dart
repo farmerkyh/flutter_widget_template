@@ -7,7 +7,7 @@ void main() {
 }
 
 /*
-  @class 
+  @class MaterialApp로 시작한다.
 */
 class NavigatorStep200 extends StatelessWidget {
   static const String _title = 'Navigator Arguments';

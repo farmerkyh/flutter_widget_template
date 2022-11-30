@@ -35,14 +35,14 @@
  - Navigator : Routes, pushNamed, pop 기본
  - [ [소스](./lib/navigator_step100/navigator_step110_routes.dart) ]
  - Route(라우터)는 통신에서 이동 경로를 의미하는 용어이다.   
-   네트워크 프로그래밍에서는 요서청 URL을 해석해 정해진 경로로 이동하는 기능을 라우트라고 한다.   
+   네트워크 프로그래밍에서는 요청 URL을 해석해 정해진 경로로 이동하는 기능을 라우트라고 한다.   
    이러한 라우트 기능을 이용하면 페이지 이동 기능을 좀 더 편리하게 구현할 수 있다.   
 
 <img src="./README_images/navigator_step110_routes_1.png">
 
 ```dart
  - 특징
-   . routes기능사용은 MaterialApp Widget내부에서만 정의 되어야 한다.
+   . routes기능사용은 MaterialApp Widget내부에서만 정의가 가능하다.
    . home 속성 대신 initialRoute 속성을 기술한다.
    . initialRoute : MateriaApp Widget생성 시 default로 보여줄 page를 기술한다. (home:속성 이라고 봐도 된다.)
    . home속성과 initialRoute 속성 2개 동시에 사용시 error발생

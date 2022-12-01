@@ -54,9 +54,9 @@
 ```dart
    onTap: () async {
       Map<String, String> todoOne = {'subject':'Fltter 공부하기', 'flag':'NO'};
-      
+
       var rtnValue = await Navigator.of(context).pushNamed('/todoPage', arguments: todoOne);
-      subject = rtnValue.toString();
+      subject = rtnValue.toString();  //실개발시에는 null값 체크 필요
    },
 ```
 ### 2. Arguments 받기
@@ -198,7 +198,7 @@
    . 눈으로 확인 방법은 : slow motion 을 켜두고 확인하면 페이지 변경(전환)시 애니메이션 차이가 보인다.
 
 # 6. Navigator Pop
- - [ [소스](./lib/pop_100/PopScreen100.dart) ]
+ - [ [소스](./lib/pop_100/pop_100.dart) ]
 
 ### 1. Pop 정의
  1. syntax : `Navigator.of(context).pop('YES');`   

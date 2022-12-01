@@ -38,7 +38,7 @@ class NavigatorStep100 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('난 Home Page (Navigator step100)'),
+            Text('Home Page (Navigator step100)\nMaterialApp() Widget은 사용하지 않았음'),
             SizedBox(height: 30.0),
             _BackButton(name: '<- 초기 화면으로 돌아가기'),
             SizedBox(height: 30.0),
@@ -131,8 +131,7 @@ class _MoveButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         //Navigator.of(context).push(MaterialPageRoute(builder: (context) => NavigatorStep100()));
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => page));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => page));
       },
       child: Text(name),
     );

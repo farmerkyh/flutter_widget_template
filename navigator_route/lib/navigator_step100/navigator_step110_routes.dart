@@ -45,9 +45,9 @@ class NavigatorSetp110Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('난 Home Page (Navigator step110)'),
+            Text('Home Page (Navigator step110)'),
             SizedBox(height: 30.0),
-            Text('MaterialApp으로 시작했기 때문에 AppBar에 뒤로가기 버튼이 생성안됨'),
+            Text('MaterialApp으로 시작했기 때문에 \nAppBar에 뒤로가기 버튼이 생성안됨'),
             SizedBox(height: 30.0),
             BackButton(name: '<- 초기 화면으로 돌아가기 (error)'),
             SizedBox(height: 30.0),

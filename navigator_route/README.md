@@ -283,7 +283,7 @@
  - [ [소스](./lib/routes_step100/routes_step100.dart) ]   
     `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));`
 
-### 2. 별도 Model class를 만들어 사용
+### 2. 별도 Model class를 만들어 개발
  - [ [소스](./lib/routes_step100/routes_step110.dart) ]
  1. Model 구성
  ```dart
@@ -304,7 +304,7 @@
    RoutesStep110ScreenModel(builder: (_) => RoutesStep110Third(), name: 'Third Page'),
 ];
  ```
- 2. AppBar Drawer 에 메뉴 목록 만들기
+ 2. AppBar Drawer 에 메뉴 목록 만들어 개발
 ```dart
    drawer: Drawer(
       child: ListView(
@@ -365,7 +365,7 @@
     );
 ```
 
- 3. AppBar Drawer 에 메뉴 목록 만들기
+ 3. AppBar Drawer 에 메뉴 목록 만들어 개발
 ```dart
    drawer: Drawer(
       child: ListView(

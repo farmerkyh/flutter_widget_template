@@ -84,7 +84,7 @@ class _NavigatorStep200Todo extends State<NavigatorStep200Todo> {
             //돌아가기 Button
             //-----------------------------------------------
             BackButton(
-              name: '<- ToDo List page로 돌아가기',
+              name: '<- 결과를 가지고 돌아가기',
               rtnVale: (_todoFlag == TodoFlag.YES ? 'YES' : 'NO'),
             ),
           ],

@@ -280,11 +280,11 @@
 <img src="./README_images/routes_step100_1.png">
 
 ### 1. 일반 Route방식   
- - [ [소스](./routes_step100/routes_step100.dart)]
+ - [ [소스](./routes_step100/routes_step100.dart) ]   
     `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));'
 
 ### 2. 별도 Model class를 만들어 사용
- - [ [소스] (./routes_step100/routes_step110.dart)]
+ - [ [소스](./routes_step100/routes_step110.dart) ]
  1. Model 구성
  ```dart
    //메뉴를 구성할 모델
@@ -332,7 +332,7 @@
 ```
 
 ### 3. Named Routes
- - [ [소스] (./routes_step200_named/named_routes200.dart)]
+ - [ [소스](./routes_step200_named/named_routes200.dart) ]
  1. Named Route class정의하기
 ```dart
    class RouteName {

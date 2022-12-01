@@ -202,8 +202,8 @@
 
 ### 1. Pop 정의
  1. syntax : `Navigator.of(context).pop('YES');`   
- 2. pop() method에 argument를 넣어 이전 페이지(화면)에 전달 할 수 있다.
- 3. 현재 페이지(화면)를 stack에서 꺼내고, 이전 페이지(화면)로 이동한다.   
+ 2. 현재 페이지(화면)를 stack에서 꺼내고, 이전 페이지(화면)로 이동한다.   
+ 3. pop() method에 argument를 넣어 이전 페이지(화면)에 전달 할 수 있다.   
 
 ### 2. Pop의 종류
  1. `Navigator.of(context).pop();`   
@@ -280,7 +280,7 @@
 <img src="./README_images/routes_step100_1.png">
 
 ### 1. 일반 Route방식   
- - [ [소스] (./routes_step100/routes_step100.dart)]
+ - [ [소스](./routes_step100/routes_step100.dart)]
     `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));'
 
 ### 2. 별도 Model class를 만들어 사용

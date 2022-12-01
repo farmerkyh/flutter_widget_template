@@ -18,6 +18,7 @@
    - 페이지 이동시 animation효과   
    - 다음페이지 appbar에 뒤로가기 버튼 생성하기   
 5. pop() 함수는 스택 메모리에서 맨 위에 있는 페이지를 제거한다.
+   - push()할 때는 대상 Class가 명시 하지만 pop()을 할때는 명시 하지 않는다.
 
 6. HomePage -> Firstpage -> SecondPage 까지 이동 시 Stack 
 <img src="./README_images/navigator_step100_2.png">

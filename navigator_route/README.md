@@ -269,5 +269,104 @@
 ```
 
 
+# 7. Routes Type
+### 1. 일반 Route방식   
+ - [ [소스] (./routes_step100/routes_step100.dart)]
+    `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));'
 
+### 2. 별도 Model class를 만들어 사용
+ - [ [소스] (./routes_step100/routes_step110.dart)]
+ 1. Model 구성
+ ```dart
+   //메뉴를 구성할 모델
+   class RoutesStep110ScreenModel {
+   final WidgetBuilder builder;
+   final String name;
 
+   RoutesStep110ScreenModel({
+      required this.builder,
+      required this.name,
+   });
+   }
+
+   final routesStep100Screens = [
+   RoutesStep110ScreenModel(builder: (_) => RoutesStep110First(), name: 'First Page'),
+   RoutesStep110ScreenModel(builder: (_) => RoutesStep110Second(), name: 'Second Page'),
+   RoutesStep110ScreenModel(builder: (_) => RoutesStep110Third(), name: 'Third Page'),
+];
+ ```
+ 2. AppBar Drawer 에 메뉴 목록 만들기
+```dart
+   drawer: Drawer(
+      child: ListView(
+         children: [
+            routesStep100Screens.map((screen) => _DrawerMenu(name: screen.name, builder: screen.builder)),
+         ],
+      )
+   )
+   //-----------------------------------------------------
+   class _DrawerMenu extends StatelessWidget {
+      final String name;
+      final WidgetBuilder builder;
+
+      const _DrawerMenu({required this.name, required this.builder, super.key});
+
+      @override
+      Widget build(BuildContext context) {
+         return ListTile(
+            tileColor: Colors.white, //기본 메뉴 tile배경색
+            onTap: () { Navigator.of(context).push(MaterialPageRoute(builder: builder)); },
+            title: Text(name),
+         );
+      }   
+   }
+```
+
+### 3. Named Routes
+ - [ [소스] (./routes_step200_named/named_routes200.dart)]
+ 1. Named Route class정의하기
+```dart
+   class RouteName {
+   static const home = "/";
+   static const firstPage = "/firstPage";
+   static const secondPage = "/secondPage";
+   static const thirdPage = "/thirdPage";
+   }
+
+   class PageName {
+   static const home = "홈";
+   static const firstPage = "첫번째 페이지";
+   static const secondPage = "두번째 페이지";
+   static const thirdPage = "세번째 페이지";
+   }
+
+   var namedRoutes200 = <String, WidgetBuilder>{
+   RouteName.home: (context) => const NamedRoutes200Home(),
+   RouteName.firstPage: (context) => const NamedRoutes200First(),
+   RouteName.secondPage: (context) => const NamedRoutes200Second(),
+   RouteName.thirdPage: (context) => const NamedRoutes200Third(),
+   };
+```
+
+ 2. routes 속성 정의하기
+```dart
+    return MaterialApp(
+      initialRoute: RouteName.home,
+      routes: namedRoutes200,
+    );
+```
+
+ 3. AppBar Drawer 에 메뉴 목록 만들기
+```dart
+   drawer: Drawer(
+      child: ListView(
+         children: [
+            for (var element in namedRoutes200.entries) 
+                  _NamedDrawerMenu(name: element.key, builder: element.value)
+         ],
+      ),
+   ),
+```
+
+### 4. AutoRouter
+ - 공부 합시다.

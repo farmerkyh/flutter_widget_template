@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                 backgroundImage: AssetImage('images/farmer_loop.png'),
                 backgroundColor: Colors.white,
               ),
-              accountEmail: Text("aa@naver.com"),
+              accountEmail: Text("farmerkyh@naver.com"),
               accountName: Text("farmer"),
               decoration: BoxDecoration(
                   color: Color.fromARGB(255, 176, 211, 240),

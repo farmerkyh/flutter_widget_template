@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/layout/main_layout.dart';
-import 'package:navigation/routes_100/route_three_screen.dart';
+import 'package:navigation/routes_1100_temp/route_three_screen.dart';
 
 class RouteTwoScreen extends StatelessWidget {
   const RouteTwoScreen({super.key});
@@ -33,8 +33,7 @@ class RouteTwoScreen extends StatelessWidget {
         //
         ElevatedButton(
             onPressed: () {
-              Navigator.of(context)
-                  .pushReplacementNamed('/three', arguments: 'abcd');
+              Navigator.of(context).pushReplacementNamed('/three', arguments: 'abcd');
             },
             child: const Text('pushReplacementNamed')),
         //
@@ -73,8 +72,7 @@ class RouteTwoScreen extends StatelessWidget {
         //  - 모든 내용은 위와 동일하다.
         ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/three', (route) => route.settings.name == '/');
+              Navigator.of(context).pushNamedAndRemoveUntil('/three', (route) => route.settings.name == '/');
             },
             child: const Text('pushNamedAndRemoveUntil')),
       ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/layout/main_layout.dart';
-import 'package:navigation/routes_100/route_two_screen.dart';
+import 'package:navigation/routes_1100_temp/route_two_screen.dart';
 
 class RouteOneScreen extends StatelessWidget {
   final int? argument;

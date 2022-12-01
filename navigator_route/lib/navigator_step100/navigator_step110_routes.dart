@@ -23,7 +23,7 @@ class NavigatorStep110Routes extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const NavigatorSetp110Home(),
-        '/first': (context) => const SecondPage(),
+        '/first': (context) => const FirstPage(),
         '/second': (context) => const SecondPage(),
         '/third': (context) => const ThirdPage()
       },

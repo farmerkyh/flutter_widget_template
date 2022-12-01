@@ -61,7 +61,7 @@ class MyGrid extends StatelessWidget {
       ),
 
       //-------------------------------------------------------
-      //2. menu
+      //2. Drawer menu
       //-------------------------------------------------------
       drawer: Drawer(
         child: ListView(

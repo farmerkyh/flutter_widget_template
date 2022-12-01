@@ -281,7 +281,7 @@
 
 ### 1. 일반 Route방식   
  - [ [소스](./lib/routes_step100/routes_step100.dart) ]   
-    `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));'
+    `Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));`
 
 ### 2. 별도 Model class를 만들어 사용
  - [ [소스](./lib/routes_step100/routes_step110.dart) ]

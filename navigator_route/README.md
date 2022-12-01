@@ -1,3 +1,5 @@
+# [08] 내비게이션 활용하기
+
 ### 소스코드 오류
    - 8-2 (todo_list프로젝트)
    - subDetail.dart (/second화면에서 return받고, null비교 필요. toString(). 형변환시 error)
@@ -5,6 +7,9 @@
 # 1. 선행학습
  - Stack, Queue 구조
 <img src="./README_images/stack_queue_1.png">
+
+  - Route : Flutter에서 screen 과 page 는 route 로 불린다.   
+  - Navigator, 화면간에 이동하고 다시 되돌아 오기
 
 # 2. Navigator Step 100
  - Navigator : push, pop 기능 구현

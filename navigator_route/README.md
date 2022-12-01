@@ -45,8 +45,8 @@
    . home속성과 initialRoute 속성 2개 동시에 사용시 error발생
 ```
 # 4. Navigator Step 200
- - Navigator : Arguments 전달, Arguments 받기, Return값 넘기기, Return값 받기    
- - [ [소스](./lib/navigator_step100/navigator_step200_arguments.dart) ]
+ - Navigator : Arguments 전달/받기, Return값 넘기기/받기    
+ - [ [소스](./lib/navigator_step200/navigator_step200_arguments.dart) ]
 ### 1. Arguments 전달 - 방법 1
  - routes + pushNamed 를 이용한 Arguments 전달
 ```dart

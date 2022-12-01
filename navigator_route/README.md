@@ -1,3 +1,5 @@
+# [08] 내비게이션 활용하기
+
 ### 소스코드 오류
    - 8-2 (todo_list프로젝트)
    - subDetail.dart (/second화면에서 return받고, null비교 필요. toString(). 형변환시 error)

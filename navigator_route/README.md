@@ -375,6 +375,21 @@
          ],
       ),
    ),
+   ....
+class _NamedDrawerMenu extends StatelessWidget {
+  final String name;
+  final WidgetBuilder builder;
+
+  const _NamedDrawerMenu({required this.name, required this.builder, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () { Navigator.of(context).push(MaterialPageRoute(builder: builder));  },
+      title: Text(name),
+    );
+  }
+}   
 ```
 
 ### 4. AutoRouter

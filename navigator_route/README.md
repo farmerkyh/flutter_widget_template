@@ -7,7 +7,7 @@
 <img src="./README_images/stack_queue_1.png">
 
 # 2. Navigator Step 100
- - Navigator : push, pop 기본
+ - Navigator : push, pop 기능 구현
  - [ [소스](./lib/navigator_step100/navigator_step100.dart) ]
 <img src="./README_images/navigator_step100_1.png">
 
@@ -29,7 +29,7 @@
 ```
 
 # 3. Navigator Step 110
- - Navigator : Routes, pushNamed, pop 기본
+ - Navigator : Routes, pushNamed, pop 기능 구현
  - [ [소스](./lib/navigator_step100/navigator_step110_routes.dart) ]
  - Route(라우터)는 통신에서 이동 경로를 의미하는 용어이다.   
    네트워크 프로그래밍에서는 요청 URL을 해석해 정해진 경로로 이동하는 기능을 라우트라고 한다.   

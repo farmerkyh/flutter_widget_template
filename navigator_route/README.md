@@ -46,6 +46,8 @@
 ```
 # 4. Navigator Step 200
  - Navigator : Arguments 전달/받기, Return값 넘기기/받기    
+ - 여기서 Argument와 Return은 : 페이지간 이동 시 적용되는 기능이다.
+   . 즉, 한 화면에서 여러 class를 호출하여 Argument를 넘기고, 결과를 Return하는 기능은 아니다.
  - [ [소스](./lib/navigator_step200/navigator_step200_arguments.dart) ]
 ### 1. Arguments 전달 - 방법 1
  - routes + pushNamed 를 이용한 Arguments 전달

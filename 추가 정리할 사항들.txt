@@ -20,6 +20,13 @@ TextFormField
   
   
 4. 사용해본 library
-  - get_it: ^7.2.0 : Dependecy injection역할을 수행하도록 해준다.
-                     \flutter_module\calendar_schedule : 프로젝트에서 사용했음
+  - get_it: Dependecy injection역할을 수행하도록 해준다.
+            \flutter_module\calendar_schedule : 프로젝트에서 사용했음
 
+  - sqflite : sql을 사용하여 개발
+              /flutter_clean_architecture_course/note_app/
+			  
+5. freezed를 사용하는 이유
+  - class의 member변수들을 불변으로 만들어준다.
+  - fromJson method를 만들어 준다.
+  - copy method를 만들어 준다.

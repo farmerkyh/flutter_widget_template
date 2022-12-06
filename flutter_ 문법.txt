@@ -1,0 +1,43 @@
+dart 형변환
+  10. set -> List : var listVal = setValue.toList();
+  11. set -> Map  : var mapVal = setValue.toList().asMap();
+  
+  20. Map.key만   -> List : val keyList = mapValue.keys.toList();
+  21. Map.value만 -> List : val valueList = mapValue.values.toList();
+  22. Map.key만   -> Set  : val keySet   = mapValue.keys.toSet();
+  23. Map.Value만 -> Set  : val valueSet = mapValue.values.toSet();
+  
+  30. List -> Map : val mapVal = listValue.asMap();
+  31. List -> Set : val setVal = listValue.asSet();
+  
+  50. String -> double : double.parset('문자형숫자')
+  51 
+  
+
+다른 화면 호출
+```dart
+   * 호출만(return값 없음)
+   100. Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectionScreen(todo: todoNotes)));
+		- return
+		Navigator.pop(context);
+   * 호출 후 return값 받기 (await)
+   200. - call
+        Future<void> _navigateAndDisplaySelection(BuildContext context) async {
+          final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectionScreen(todo: todoNotes)),);
+        }
+		- return
+		Navigator.pop(context, 'Yep!');
+```
+
+
+메시지
+```dart
+1. ScaffoldMessenger.of(context)..removeCurrentSnackBar()..showSnackBar(SnackBar(content: Text('$result')));
+
+```
+
+반올림, 버림
+```dart
+1. 버림 : (3.514).floor()
+2. 반올림 :  (3.514).round()
+3. 소수점 길이 고정 : (3.515).toStringAsFixed(2)  (반올림) (문자열 반환)

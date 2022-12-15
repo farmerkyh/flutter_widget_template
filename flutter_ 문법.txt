@@ -41,3 +41,7 @@ dart 형변환
 1. 버림 : (3.514).floor()
 2. 반올림 :  (3.514).round()
 3. 소수점 길이 고정 : (3.515).toStringAsFixed(2)  (반올림) (문자열 반환)
+
+- 참고[용어]
+1. inversion of constrol
+      . 함수의 reference를 child widget에 전달하고 child에서 함수를 호출하는 방법을 inversion of constrol이라고 한다.

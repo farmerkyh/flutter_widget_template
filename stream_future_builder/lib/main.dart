@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stream_future_builder/screen/future_builder_100.dart';
-import 'package:stream_future_builder/screen/stream_builder_100.dart';
+import 'package:stream_future_builder/future/future_builder_100.dart';
+import 'package:stream_future_builder/stream/stream_builder_100.dart';
 
 void main() => runApp(MyApp());
 
@@ -60,15 +60,12 @@ class MyGrid extends StatelessWidget {
               accountName: Text("farmer"),
               decoration: BoxDecoration(
                   color: Color.fromARGB(255, 176, 211, 240),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40.0),
-                      bottomRight: Radius.circular(40.0))),
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(40.0), bottomRight: Radius.circular(40.0))),
             ),
             //Foundation
-            createLeftOneMenu(
-                context, "FutureBuilder", const FutureBuilder100()),
-            createLeftOneMenu(
-                context, "StreamBuilder", const StreamBuilder100()),
+            createLeftOneMenu(context, "FutureBuilder", const FutureBuilder100()),
+            createLeftOneMenu(context, "StreamBuilder", const StreamBuilder100()),
             const Divider(height: 50),
           ],
         ),
@@ -91,8 +88,7 @@ class MyGrid extends StatelessWidget {
         child: ListTile(
           title: Text(menuNm),
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => page));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => page));
             //Navigator.pop(context);
             //Route route = MaterialPageRoute(builder: (context) => ListViewStep10());
             //Navigator.pushReplacement(context, route);

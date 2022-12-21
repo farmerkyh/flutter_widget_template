@@ -67,10 +67,10 @@ Future<Name> nameList() async {
 }
 
 class Name {
-  int id;
-  String firstName;
-  String lastName;
-  String email;
+  final int id;
+  final String firstName;
+  final String lastName;
+  final String email;
   Name(this.id, this.firstName, this.lastName, this.email);
 
   Name.fromJson(Map<String, dynamic> json)
@@ -78,6 +78,16 @@ class Name {
         firstName = json['firstName'],
         lastName = json['lastName'],
         email = json['email'];
+
+  //아래는 문법만 확인해보려고 작성했었음
+  // factory Name.fromJson2(Map<String, dynamic> json) {
+  //   return Name(
+  //     json['id'],
+  //     json['firstName'],
+  //     json['lastName'],
+  //     json['email'],
+  //   );
+  // }
 
   Map<String, dynamic> toJson() {
     return {

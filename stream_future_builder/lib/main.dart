@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stream_future_builder/future/future_builder_100.dart';
+import 'package:stream_future_builder/future/future_builder_200.dart';
 import 'package:stream_future_builder/stream/stream_builder_100.dart';
 
 void main() => runApp(MyApp());
@@ -65,6 +66,7 @@ class MyGrid extends StatelessWidget {
             ),
             //Foundation
             createLeftOneMenu(context, "FutureBuilder", const FutureBuilder100()),
+            createLeftOneMenu(context, "FutureBuilder (http)", const FutureBuilder200()),
             createLeftOneMenu(context, "StreamBuilder", const StreamBuilder100()),
             const Divider(height: 50),
           ],

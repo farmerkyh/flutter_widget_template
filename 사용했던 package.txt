@@ -1,5 +1,11 @@
-hive : database - nosql 사용용
+hive : database - nosql 사용용 (join이 거의 없고. 중복data를 허용하는 모델링이다)
+       /flutter_module/fine_dust_weather
 table_calendar: ^3.0.8 #달력
 intl: ^0.17.0  #다국어 사용용
 
 dio : http요청 package
+http : /flutter_clean_architecture_course/image_search
+       
+-------------------------------
+* plugin 추가 목록
+    - Json To Dart

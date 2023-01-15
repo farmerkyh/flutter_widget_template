@@ -77,7 +77,8 @@ String addDate(String ymd, int offSet) {
   *         getDay('last', ymd:'20221111',offSet:-1)  --202211월 기준 - 전월 말일
   *         getDay('last', ymd:'20221211',offSet: 1)  --202212월 기준 - 익월 말일
   */
-dynamic getDay2(String type, {String ymd = '', int offSet = 0, String rtnType = 'ymd'}) {
+dynamic getDay2(String type,
+    {String ymd = '', int offSet = 0, String rtnType = 'ymd'}) {
   int year, month;
 
   if (type == 'today') {
@@ -95,9 +96,11 @@ dynamic getDay2(String type, {String ymd = '', int offSet = 0, String rtnType = 
 
   String rtnYmd;
   if (type == 'first') {
-    rtnYmd = DateFormat('yyyyMMdd').format(DateTime(year, month + offSet, 1)); //1일
+    rtnYmd =
+        DateFormat('yyyyMMdd').format(DateTime(year, month + offSet, 1)); //1일
   } else {
-    rtnYmd = DateFormat('yyyyMMdd').format(DateTime(year, month + 1 + offSet, 0)); //말일
+    rtnYmd = DateFormat('yyyyMMdd')
+        .format(DateTime(year, month + 1 + offSet, 0)); //말일
   }
 
   if (rtnType == 'ymd') {

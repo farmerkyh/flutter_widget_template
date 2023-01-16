@@ -49,8 +49,9 @@ class _HeatmapCalendar090State extends State<HeatmapCalendar090> {
         endDate: DateTime.parse(getDay2("last",
             ymd: DateFormat('yyyyMMdd').format(DateTime.now()).toString(),
             offSet: 0)),
-        //colorMode: ColorMode.opacity, //default colorsets 값으로 색깔 처리
-        colorMode: ColorMode.color, //colorsets: 속성으로 색깔 처리
+        //colorMode: ColorMode.opacity,
+        //colorMode: ColorMode.color,
+        colorMode: ColorMode.opacity, //colorsets: 속성으로 색깔 처리
         showText: false,
         scrollable: true,
         colorsets: const {

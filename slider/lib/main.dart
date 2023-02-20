@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './slider/slider100.dart';
 import './balloon_slider/balloon_slider100.dart';
 import './slider_controller/slider_controller100.dart';
+import './carousel_slider/carousel_slider100.dart';
 
 void main() => runApp(MyApp());
 
@@ -67,6 +68,10 @@ class MyGrid extends StatelessWidget {
 
             //BallonSlider
             createLeftOneMenu(context, "Ballon Slider", const BallonSlider100()),
+            const Divider(height: 5),
+
+            //
+            createLeftOneMenu(context, "Carousel Slider", const CarouselSlider100()),
             const Divider(height: 5),
 
             //Slider
